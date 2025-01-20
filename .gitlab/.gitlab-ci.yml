@@ -1,0 +1,11 @@
+image: alpine:latest
+
+pages:
+  stage: deploy
+  script:
+    - echo "Website files are already in public/."
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
