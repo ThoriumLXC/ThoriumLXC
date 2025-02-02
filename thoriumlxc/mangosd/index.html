@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mangosd" class="md-skip">
+        <a href="#cmangos-configuration-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -578,6 +578,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    mangosd.conf
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -587,6 +598,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-mangosdconf" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is mangosd.conf?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is mangosd.conf?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-using-mangosdconf-with-docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Using mangosd.conf with Docker Compose
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration Options
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -686,7 +749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../database/" class="md-nav__link">
+      <a href="../database/backups/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -722,140 +785,16 @@
   
   
   
-    
-    
-      
+    <li class="md-nav__item">
+      <a href="../design/overview/" class="md-nav__link">
         
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-        
-          
-          
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_7" >
-        
-          
-          <label class="md-nav__link" for="__nav_1_7" id="__nav_1_7_label" tabindex="">
-            
   
   <span class="md-ellipsis">
     Philosophy
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1_7">
-            <span class="md-nav__icon md-icon"></span>
-            Philosophy
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../design/overview/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Overview
-  </span>
-  
-
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../design/docker/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Docker
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../design/bazel/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Bazel
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../design/hermetic/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Hermetic
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -928,7 +867,7 @@
       <a href="../../cmangos-classic/overview/" class="md-nav__link">
         
   
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2M7 9.5C7 8.7 7.7 8 8.5 8s1.5.7 1.5 1.5S9.3 11 8.5 11 7 10.3 7 9.5m5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81M15.5 11c-.8 0-1.5-.7-1.5-1.5S14.7 8 15.5 8s1.5.7 1.5 1.5-.7 1.5-1.5 1.5"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
   
   <span class="md-ellipsis">
     Overview
@@ -3298,6 +3237,47 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-mangosdconf" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is mangosd.conf?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is mangosd.conf?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-using-mangosdconf-with-docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Using mangosd.conf with Docker Compose
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration Options
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3311,7 +3291,61 @@
                   
 
 
-<h1 id="mangosd">Mangosd</h1>
+<h1 id="cmangos-configuration-guide">CMangos Configuration Guide</h1>
+<h2 id="what-is-mangosdconf">What is <code>mangosd.conf</code>?</h2>
+<p>The <code>mangosd.conf</code> file is the main configuration file for the CMangos server. It contains settings that control how the server operates, including server name, rates, logging, and more.</p>
+<p>Think of it as the “control center” for your CMangos instance: if you need to tweak gameplay rates or connect to your database, you’ll find the relevant settings here.</p>
+<h3 id="example-using-mangosdconf-with-docker-compose">Example: Using <code>mangosd.conf</code> with Docker Compose</h3>
+<p>Below is a basic example of how to mount the <code>mangosd.conf</code> file into a Docker Compose container. Replace the placeholder paths and image tags with your actual configuration:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3.8&#39;</span>
+<span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">cmangos</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cmangos/server:latest</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./mangosd.conf:/etc/cmangos/mangosd.conf</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8085:8085&quot;</span>
+<span class="w">    </span><span class="c1"># Additional environment variables or configurations can go here</span>
+</code></pre></div>
+<p>This works by working relative to the path of the <code>docker-compose.yaml</code> file. So if you file is located at <code>/some/path/to/file/docker-compose.yaml</code>, then your file would be next it within the same directory at <code>/some/path/to/file/mangosd.conf</code></p>
+<div class="highlight"><pre><span></span><code>-
+-
+-
+-
+</code></pre></div>
+<h2 id="configuration-options">Configuration Options</h2>
+<p>Here are a few commonly used settings from the <code>mangosd.conf</code> file. You can add more as needed:</p>
+<ul>
+<li><code>RealmID</code></li>
+<li>
+<p>A unique numeric identifier for your realm. If you have multiple realms, each needs a different ID.</p>
+</li>
+<li>
+<p><code>DataDir</code></p>
+</li>
+<li>
+<p>The file system path where your game data is stored. For example: <code>/usr/local/cmangos/data/</code></p>
+</li>
+<li>
+<p><code>WorldDatabaseInfo</code></p>
+</li>
+<li>
+<p>The connection details for your World database. Typically includes the host, port, username, password, and database name.<br />
+  Example: <code>127.0.0.1;3306;root;password;cmangos_world</code></p>
+</li>
+<li>
+<p><code>Rates.Health</code></p>
+</li>
+<li>
+<p>Adjusts how quickly players regenerate health. A higher value means faster regeneration.</p>
+</li>
+<li>
+<p><code>Rates.DropMoney</code></p>
+</li>
+<li>Controls how much gold creatures drop. A lower value decreases dropped gold; a higher value increases it.</li>
+</ul>
+<hr />
+<p>Feel free to expand on these options or add new ones based on your project’s needs. You can find more detailed documentation and community support in the official CMangos GitHub repository and forums.</p>
 
 
 
