@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#builddeps" class="md-skip">
+        <a href="#build-deps" class="md-skip">
           Skip to content
         </a>
       
@@ -361,6 +361,8 @@
       
         
           
+        
+      
         
       
         
@@ -717,6 +719,148 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_8" id="__nav_1_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Building
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_8">
+            <span class="md-nav__icon md-icon"></span>
+            Building
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../thoriumlxc/build/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../thoriumlxc/build/deps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BuildDeps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../thoriumlxc/build/building/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Builder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../thoriumlxc/build/runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Runtime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -812,8 +956,6 @@
       
         
       
-        
-      
     
     
       
@@ -846,27 +988,6 @@
             Getting Started
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../cmangos-classic/installation/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Installation
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -1217,6 +1338,8 @@
       
         
       
+        
+      
     
     
       
@@ -1304,6 +1427,27 @@
   
   <span class="md-ellipsis">
     Builder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cmangos-classic/build/runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Runtime
   </span>
   
 
@@ -1832,6 +1976,8 @@
       
         
       
+        
+      
     
     
       
@@ -1905,6 +2051,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    BuildDeps
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1914,6 +2071,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-build-deps" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are Build Deps?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deterministic-builds-with-bazel-and-rules-oci" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deterministic Builds with Bazel and Rules OCI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-builder-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Builder Image
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-all-fits-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It All Fits Together
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1932,6 +2153,27 @@
   
   <span class="md-ellipsis">
     Builder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Runtime
   </span>
   
 
@@ -2447,6 +2689,8 @@
       
         
       
+        
+      
     
     
       
@@ -2534,6 +2778,27 @@
   
   <span class="md-ellipsis">
     Builder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cmangos-wotlk/build/runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Runtime
   </span>
   
 
@@ -3049,6 +3314,8 @@
       
         
       
+        
+      
     
     
       
@@ -3145,6 +3412,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vmangos/build/runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Runtime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3180,6 +3468,59 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-build-deps" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are Build Deps?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deterministic-builds-with-bazel-and-rules-oci" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deterministic Builds with Bazel and Rules OCI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-builder-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Builder Image
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-all-fits-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It All Fits Together
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3193,8 +3534,53 @@
                   
 
 
-<h1 id="builddeps">BuildDeps</h1>
-<p>BuildDeps</p>
+<h1 id="build-deps">Build Deps</h1>
+<p>The CMangos Docker image architecture follows a modular approach, breaking down the build process into distinct layers for consistency, reproducibility, and maintainability. A critical part of this architecture is the Build Deps layer, which manages the foundational build dependencies required to compile the CMangos server.</p>
+<hr />
+<h2 id="what-are-build-deps">What are Build Deps?</h2>
+<p>Build Deps (short for <em>Build Dependencies</em>) refer to the essential system libraries, development tools, and other dependencies needed to build the CMangos project. These include:</p>
+<ul>
+<li>Standard Libraries (e.g., <code>libc</code>, <code>libssl</code>)</li>
+<li>Development Tools (e.g., <code>gcc</code>, <code>make</code>, <code>cmake</code>)</li>
+<li>Debian Packages required for compiling the source code</li>
+<li>Other system-level dependencies essential for the build process</li>
+</ul>
+<p>These dependencies are only used during the build phase and are not included in the final runtime image, keeping the production environment clean and lightweight.</p>
+<hr />
+<h2 id="deterministic-builds-with-bazel-and-rules-oci">Deterministic Builds with Bazel and Rules OCI</h2>
+<p>To ensure that builds are deterministic—meaning the same source code always produces the same output—we use Bazel along with Rules OCI. This combination offers several advantages:</p>
+<ul>
+<li>Reproducibility: Regardless of when or where the build occurs, the output will be identical if the source code version remains the same.</li>
+<li>Version Control: Build dependencies are pinned to specific versions, eliminating inconsistencies from upstream package changes.</li>
+<li>Efficiency: Bazel’s caching and precise dependency management speed up rebuilds, especially for minor changes.</li>
+</ul>
+<p>By leveraging Bazel and Rules OCI, we eliminate variables that could affect build outcomes, ensuring reliable results across development, testing, and production environments.</p>
+<hr />
+<h2 id="the-builder-image">The Builder Image</h2>
+<p>The Builder image builds on top of the Build Deps layer. It contains everything required to compile the CMangos server, including:</p>
+<ul>
+<li>Pre-installed Build Deps: All necessary libraries and tools for building the source code.</li>
+<li>Build Scripts and Steps: Automated processes baked into the image to handle compilation.</li>
+<li>Environment Variables: Configurations required during the build process.</li>
+<li>Upstream Source Code: Integrated directly from official repositories for clean, version-controlled builds.</li>
+</ul>
+<p>The Builder image is solely responsible for the build process. It does not include runtime components, keeping it focused and optimized for its purpose.</p>
+<hr />
+<h2 id="how-it-all-fits-together">How It All Fits Together</h2>
+<ol>
+<li>Build Deps Layer: Provides the foundational dependencies required to build CMangos.</li>
+<li>Builder Image: Utilizes the Build Deps layer to compile the server code and manage build configurations.</li>
+<li>Final Runtime Image: Contains only the compiled binaries and runtime dependencies, optimized for performance and minimal size.</li>
+</ol>
+<p>This layered architecture allows for greater flexibility, easier updates, and improved security by separating build tools from the final production environment.</p>
+<hr />
+<h2 id="summary">Summary</h2>
+<ul>
+<li>Build Deps manage the critical dependencies required for building CMangos.</li>
+<li>Dependencies are installed using Bazel and Rules OCI for deterministic, reproducible builds.</li>
+<li>The Builder Image leverages Build Deps to execute build steps, manage environment variables, and integrate upstream source code.</li>
+<li>This modular design ensures clean, consistent builds and optimized runtime environments.</li>
+</ul>
 
 
 

@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="../../thoriumlxc/design/overview/">
+        <link rel="prev" href="../../thoriumlxc/build/runtime/">
       
       
-        <link rel="next" href="../installation/">
+        <link rel="next" href="../client-data/">
       
       
       <link rel="icon" href="../../assets/favicon.png">
@@ -375,6 +375,8 @@
       
         
       
+        
+      
     
     
       
@@ -717,6 +719,148 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_8" id="__nav_1_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Building
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_8">
+            <span class="md-nav__icon md-icon"></span>
+            Building
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../thoriumlxc/build/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../thoriumlxc/build/deps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BuildDeps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../thoriumlxc/build/building/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Builder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../thoriumlxc/build/runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Runtime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -836,81 +980,81 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#1-prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      1. Prerequisites
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#downloading-the-project" class="md-nav__link">
+  <a href="#2-cloning-the-cmangos-repository" class="md-nav__link">
     <span class="md-ellipsis">
-      Downloading the Project
+      2. Cloning the CMangos Repository
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pulling-docker-images" class="md-nav__link">
+  <a href="#3-understanding-the-project-structure" class="md-nav__link">
     <span class="md-ellipsis">
-      Pulling Docker Images
+      3. Understanding the Project Structure
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#starting-the-server" class="md-nav__link">
+  <a href="#4-configuring-the-server-optional" class="md-nav__link">
     <span class="md-ellipsis">
-      Starting the Server
+      4. Configuring the Server (Optional)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#stopping-the-server" class="md-nav__link">
+  <a href="#5-starting-the-server" class="md-nav__link">
     <span class="md-ellipsis">
-      Stopping the Server
+      5. Starting the Server
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#removing-containers" class="md-nav__link">
+  <a href="#6-connecting-to-your-server" class="md-nav__link">
     <span class="md-ellipsis">
-      Removing Containers
+      6. Connecting to Your Server
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#full-cleanup" class="md-nav__link">
+  <a href="#7-managing-the-server" class="md-nav__link">
     <span class="md-ellipsis">
-      Full Cleanup
+      7. Managing the Server
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#viewing-logs" class="md-nav__link">
+  <a href="#8-troubleshooting-tips" class="md-nav__link">
     <span class="md-ellipsis">
-      Viewing Logs
+      8. Troubleshooting Tips
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#further-reading" class="md-nav__link">
+  <a href="#9-next-steps" class="md-nav__link">
     <span class="md-ellipsis">
-      Further Reading
+      9. Next Steps
     </span>
   </a>
   
@@ -933,8 +1077,6 @@
   
     
     
-      
-        
       
         
       
@@ -977,27 +1119,6 @@
             Getting Started
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../installation/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Installation
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -1351,6 +1472,8 @@
       
         
       
+        
+      
     
     
       
@@ -1441,6 +1564,27 @@
   
   <span class="md-ellipsis">
     Builder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../build/runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Runtime
   </span>
   
 
@@ -1956,6 +2100,8 @@
       
         
       
+        
+      
     
     
       
@@ -2043,6 +2189,27 @@
   
   <span class="md-ellipsis">
     Builder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmangos-tbc/build/runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Runtime
   </span>
   
 
@@ -2558,6 +2725,8 @@
       
         
       
+        
+      
     
     
       
@@ -2645,6 +2814,27 @@
   
   <span class="md-ellipsis">
     Builder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmangos-wotlk/build/runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Runtime
   </span>
   
 
@@ -3160,6 +3350,8 @@
       
         
       
+        
+      
     
     
       
@@ -3256,6 +3448,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vmangos/build/runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Runtime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3298,81 +3511,81 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#1-prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      1. Prerequisites
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#downloading-the-project" class="md-nav__link">
+  <a href="#2-cloning-the-cmangos-repository" class="md-nav__link">
     <span class="md-ellipsis">
-      Downloading the Project
+      2. Cloning the CMangos Repository
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pulling-docker-images" class="md-nav__link">
+  <a href="#3-understanding-the-project-structure" class="md-nav__link">
     <span class="md-ellipsis">
-      Pulling Docker Images
+      3. Understanding the Project Structure
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#starting-the-server" class="md-nav__link">
+  <a href="#4-configuring-the-server-optional" class="md-nav__link">
     <span class="md-ellipsis">
-      Starting the Server
+      4. Configuring the Server (Optional)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#stopping-the-server" class="md-nav__link">
+  <a href="#5-starting-the-server" class="md-nav__link">
     <span class="md-ellipsis">
-      Stopping the Server
+      5. Starting the Server
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#removing-containers" class="md-nav__link">
+  <a href="#6-connecting-to-your-server" class="md-nav__link">
     <span class="md-ellipsis">
-      Removing Containers
+      6. Connecting to Your Server
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#full-cleanup" class="md-nav__link">
+  <a href="#7-managing-the-server" class="md-nav__link">
     <span class="md-ellipsis">
-      Full Cleanup
+      7. Managing the Server
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#viewing-logs" class="md-nav__link">
+  <a href="#8-troubleshooting-tips" class="md-nav__link">
     <span class="md-ellipsis">
-      Viewing Logs
+      8. Troubleshooting Tips
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#further-reading" class="md-nav__link">
+  <a href="#9-next-steps" class="md-nav__link">
     <span class="md-ellipsis">
-      Further Reading
+      9. Next Steps
     </span>
   </a>
   
@@ -3394,60 +3607,130 @@
 
 
 <h1 id="cmangos-classic">cMaNGOS Classic</h1>
-<p>This guide explains how to acquire a Docker Compose configuration for the Mangos World of Warcraft emulation server, and then run the server. It assumes that Docker and Docker Compose are already installed on your system—if you have not installed them yet, please visit the official Docker website to download and set them up first. All commands shown here should be typed into a Terminal if you are on macOS or Linux, or a Command Prompt/PowerShell if you are on Windows.</p>
-<p>In this README, you can jump to different sections by clicking on the links below.</p>
-<h2 id="prerequisites">Prerequisites</h2>
-<p>Before you begin, ensure you have Docker and Docker Compose installed and configured on your machine. Running the command below confirms that Docker is accessible:</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>--version
+<p>Welcome to the CMangos Getting Started guide. This section will walk you through the process of setting up your CMangos server using Docker. Whether you're new to server emulation or Docker itself, this guide is designed to help you get up and running quickly and smoothly.</p>
+<hr />
+<h2 id="1-prerequisites"><strong>1. Prerequisites</strong></h2>
+<p>Before you begin, make sure you have the following installed on your system:</p>
+<ul>
+<li>
+<p><strong>Docker</strong>: Required to run the CMangos server in isolated containers.
+  <a href="https://www.docker.com/get-started">Download Docker</a></p>
+</li>
+<li>
+<p><strong>Docker Compose</strong>: Simplifies the process of managing multi-container Docker applications.
+  <a href="https://docs.docker.com/compose/">Learn about Docker Compose</a></p>
+</li>
+<li>
+<p><strong>Git</strong> (optional but recommended): Helps clone the CMangos repository easily.
+  <a href="https://git-scm.com/downloads">Get Git</a></p>
+</li>
+</ul>
+<hr />
+<h2 id="2-cloning-the-cmangos-repository"><strong>2. Cloning the CMangos Repository</strong></h2>
+<p>You'll need to download the CMangos Docker configuration files. The easiest way to do this is by cloning the repository:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/your-cmangos-repo.git
+<span class="nb">cd</span><span class="w"> </span>your-cmangos-repo
 </code></pre></div>
-<p>If this command does not show a valid Docker version, refer to the official documentation on Docker’s website to install and set up Docker correctly. You can also verify Docker Compose similarly:</p>
-<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>--version
-</code></pre></div>
-<p>Confirming both means you are ready to proceed.</p>
-<h2 id="downloading-the-project">Downloading the Project</h2>
-<p>To get the files for this Mangos Docker Compose setup, visit the repository on GitHub. Under the green “Code” button (or in the “Releases” section, if one is provided), you will see an option to download a ZIP archive of the code. Download and save the ZIP archive to a location on your computer, then extract its contents. You will end up with a folder that includes the <code>docker-compose.yml</code> file and other necessary files for the Mangos server.</p>
-<p>After extracting, open your Terminal or Command Prompt and navigate to the newly created folder. For instance, you could type something like:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/path/to/unzipped/folder
-</code></pre></div>
-<p>Adjust the command above to match the folder location where you extracted the archive. Once you are inside this folder, the Docker Compose commands explained in the rest of this document will apply.</p>
-<h2 id="pulling-docker-images">Pulling Docker Images</h2>
-<p>When you are in the project folder, you can download the images that the Docker Compose configuration requires by typing:</p>
-<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>pull
-</code></pre></div>
-<p>This command fetches all the images declared in the <code>docker-compose.yml</code> file and stores them on your machine. If you already have a compatible version of these images, Docker may skip downloading or perform a quick update check. Think of Docker images as the building blocks that your containers will be created from.</p>
-<h2 id="starting-the-server">Starting the Server</h2>
-<p>Once the images are ready, you can start the Mangos server by typing:</p>
-<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>up
-</code></pre></div>
-<p>This action starts each container specified in the <code>docker-compose.yml</code> file. The Terminal will display output that shows the server initiating. If you want the server to keep running in the background so you can use the same Terminal window for other tasks, you can add the <code>-d</code> flag:</p>
+<p>If you prefer not to use Git, you can also download the repository as a ZIP file from GitHub and extract it.</p>
+<hr />
+<h2 id="3-understanding-the-project-structure"><strong>3. Understanding the Project Structure</strong></h2>
+<p>After downloading the repository, you’ll see a few important files and folders:</p>
+<ul>
+<li><code>docker-compose.yml</code>: Defines how the CMangos server and its database are run using Docker.</li>
+<li><code>configs/</code>: Holds configuration files like <code>mangosd.conf</code> and <code>realmd.conf</code>.</li>
+<li><code>data/</code>: Where map data and client files will be stored.</li>
+<li><code>logs/</code>: For server logs to help with diagnostics and troubleshooting.</li>
+</ul>
+<hr />
+<h2 id="4-configuring-the-server-optional"><strong>4. Configuring the Server (Optional)</strong></h2>
+<p>Before starting the server, you can adjust settings in the configuration files if needed:</p>
+<ul>
+<li><strong><code>configs/mangosd.conf</code></strong>: Controls gameplay mechanics, server rates, and more.</li>
+<li><strong><code>configs/realmd.conf</code></strong>: Manages login server settings.</li>
+</ul>
+<p>You can modify these files using any text editor. If you’re unsure about changes, the default settings will work fine to start.</p>
+<hr />
+<h2 id="5-starting-the-server"><strong>5. Starting the Server</strong></h2>
+<p>Once everything is set up, start the server using Docker Compose:</p>
 <div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>up<span class="w"> </span>-d
 </code></pre></div>
-<p>By adding <code>-d</code>, you instruct Docker Compose to run in “detached” mode, meaning the containers keep running until you stop them, even if you close your Terminal window.</p>
-<h2 id="stopping-the-server">Stopping the Server</h2>
-<p>If you need to pause the running server without removing the containers, you can type:</p>
-<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>stop
+<p>This command will:</p>
+<ul>
+<li>Pull the necessary Docker images (if not already downloaded).</li>
+<li>Start both the CMangos server and the database in the background.</li>
+</ul>
+<p>To verify that everything is running:</p>
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>ps
 </code></pre></div>
-<p>Stopping works well if you plan to resume operations soon and would like to avoid recreating containers. It halts the running processes but leaves them on your system in a stopped state.</p>
-<h2 id="removing-containers">Removing Containers</h2>
-<p>To remove the containers completely and free up any resources they consume, you can type:</p>
-<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>down
+<p>You should see services like <code>mangosd</code> and <code>realmd</code> listed as "Up."</p>
+<hr />
+<h2 id="6-connecting-to-your-server"><strong>6. Connecting to Your Server</strong></h2>
+<ol>
+<li>Launch your World of Warcraft client (compatible with the server version).</li>
+<li>Edit the <code>realmlist.wtf</code> file in your client’s directory to point to your server:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>set realmlist 127.0.0.1
 </code></pre></div>
-<p>Removing containers can be useful if you want a clean environment each time you start the server. When you run <code>down</code>, Docker Compose not only stops the containers but also deletes them from your system.</p>
-<h2 id="full-cleanup">Full Cleanup</h2>
-<p>If you wish to remove all the containers and the underlying images they depend on, you can type:</p>
-<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>down<span class="w"> </span>--rmi<span class="w"> </span>all
+<ol>
+<li>Save the file and start the game.</li>
+</ol>
+<p>You’ll need to create an account to log in:</p>
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>mangosd<span class="w"> </span>account<span class="w"> </span>create<span class="w"> </span>username<span class="w"> </span>password
 </code></pre></div>
-<p>This command fully cleans everything associated with this project’s Docker environment, including the images. Keep in mind that if you run this command and later choose to start the server again, Docker will need to pull the images once more, which may take some time depending on your internet speed.</p>
-<h2 id="viewing-logs">Viewing Logs</h2>
-<p>While the server is running, you can inspect its logs by typing:</p>
-<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>logs
-</code></pre></div>
-<p>This command shows the output generated by the containers. If you want to follow the logs in real time and watch new entries as they appear, add the <code>-f</code> flag:</p>
+<p>Replace <code>username</code> and <code>password</code> with your preferred credentials.</p>
+<hr />
+<h2 id="7-managing-the-server"><strong>7. Managing the Server</strong></h2>
+<p>Here are some common Docker Compose commands to manage your CMangos server:</p>
+<ul>
+<li>
+<p><strong>View server logs:</strong>
 <div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>logs<span class="w"> </span>-f
-</code></pre></div>
-<p>Viewing the logs is a practical way to troubleshoot any issues or just keep track of what the server is doing.</p>
-<h2 id="further-reading">Further Reading</h2>
-<p>If you want to learn more about Docker and Docker Compose, the official Docker documentation is an excellent place to start. You may also consult community forums or official Mangos resources for additional tips, configurations, and troubleshooting help. This project is intended to provide a solid foundation, but you are welcome to customize the <code>docker-compose.yml</code> file or related scripts to suit your own environment.</p>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Stop the server:</strong>
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>down
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Restart the server:</strong>
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>restart
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Update the server to the latest version:</strong>
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>pull
+docker-compose<span class="w"> </span>up<span class="w"> </span>-d
+</code></pre></div></p>
+</li>
+</ul>
+<hr />
+<h2 id="8-troubleshooting-tips"><strong>8. Troubleshooting Tips</strong></h2>
+<ul>
+<li>
+<p><strong>Check for Errors:</strong>
+  If the server doesn’t start correctly, use <code>docker-compose logs</code> to review the output for errors.</p>
+</li>
+<li>
+<p><strong>Database Issues:</strong>
+  Ensure the database container (<code>db</code>) is running using <code>docker-compose ps</code>.</p>
+</li>
+<li>
+<p><strong>Port Conflicts:</strong>
+  Make sure ports used by CMangos (default: 3724 for login, 8085 for the game server) are not in use by other applications.</p>
+</li>
+</ul>
+<hr />
+<h2 id="9-next-steps"><strong>9. Next Steps</strong></h2>
+<p>After you’re comfortable with the basics, you can explore:</p>
+<ul>
+<li><strong>Customizing Server Settings</strong> in <code>mangosd.conf</code> for gameplay tweaks.</li>
+<li><strong>Managing Accounts</strong> with in-game commands or the database.</li>
+<li><strong>Advanced Configuration</strong> for multiple realms or remote access.</li>
+</ul>
+<p>For more details, check out the other sections of the documentation, including <strong>Installation</strong>, <strong>Configuration</strong>, and <strong>Database Management</strong>.</p>
+<hr />
+<p>With this guide, you should now have a fully functional CMangos server running in Docker. Enjoy your journey into Azeroth!</p>
 
 
 
@@ -3486,7 +3769,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../thoriumlxc/design/overview/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Philosophy">
+          <a href="../../thoriumlxc/build/runtime/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Runtime">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3496,20 +3779,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Philosophy
+                Runtime
               </div>
             </div>
           </a>
         
         
           
-          <a href="../installation/" class="md-footer__link md-footer__link--next" aria-label="Next: Installation">
+          <a href="../client-data/" class="md-footer__link md-footer__link--next" aria-label="Next: Client Data">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Installation
+                Client Data
               </div>
             </div>
             <div class="md-footer__button md-icon">

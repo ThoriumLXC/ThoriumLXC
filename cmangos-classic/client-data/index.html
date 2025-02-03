@@ -13,7 +13,7 @@
       
       
       
-        <link rel="prev" href="../installation/">
+        <link rel="prev" href="../overview/">
       
       
         <link rel="next" href="../versions/">
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#understanding-client-data-in-vmangos" class="md-skip">
+        <a href="#client-data" class="md-skip">
           Skip to content
         </a>
       
@@ -361,6 +361,8 @@
       
         
           
+        
+      
         
       
         
@@ -717,6 +719,148 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_8" id="__nav_1_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Building
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_8">
+            <span class="md-nav__icon md-icon"></span>
+            Building
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../thoriumlxc/build/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../thoriumlxc/build/deps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BuildDeps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../thoriumlxc/build/building/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Builder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../thoriumlxc/build/runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Runtime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -819,8 +963,6 @@
       
         
       
-        
-      
     
     
       
@@ -856,27 +998,6 @@
             Getting Started
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../installation/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Installation
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -931,27 +1052,60 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#concept-of-client-data" class="md-nav__link">
+  <a href="#what-is-client-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Concept of Client Data
+      What is Client Data?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#extracting-client-data" class="md-nav__link">
+  <a href="#why-client-data-is-important" class="md-nav__link">
     <span class="md-ellipsis">
-      Extracting Client Data
+      Why Client Data is Important
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#client-data-in-docker" class="md-nav__link">
+  <a href="#how-client-data-is-extracted" class="md-nav__link">
     <span class="md-ellipsis">
-      Client Data in Docker
+      How Client Data is Extracted
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How Client Data is Extracted">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steps-to-extract-client-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps to Extract Client Data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-extracted-client-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Extracted Client Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
     </span>
   </a>
   
@@ -1297,6 +1451,8 @@
       
         
       
+        
+      
     
     
       
@@ -1387,6 +1543,27 @@
   
   <span class="md-ellipsis">
     Builder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../build/runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Runtime
   </span>
   
 
@@ -1902,6 +2079,8 @@
       
         
       
+        
+      
     
     
       
@@ -1989,6 +2168,27 @@
   
   <span class="md-ellipsis">
     Builder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmangos-tbc/build/runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Runtime
   </span>
   
 
@@ -2504,6 +2704,8 @@
       
         
       
+        
+      
     
     
       
@@ -2591,6 +2793,27 @@
   
   <span class="md-ellipsis">
     Builder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmangos-wotlk/build/runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Runtime
   </span>
   
 
@@ -3106,6 +3329,8 @@
       
         
       
+        
+      
     
     
       
@@ -3202,6 +3427,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vmangos/build/runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Runtime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3244,27 +3490,60 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#concept-of-client-data" class="md-nav__link">
+  <a href="#what-is-client-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Concept of Client Data
+      What is Client Data?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#extracting-client-data" class="md-nav__link">
+  <a href="#why-client-data-is-important" class="md-nav__link">
     <span class="md-ellipsis">
-      Extracting Client Data
+      Why Client Data is Important
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#client-data-in-docker" class="md-nav__link">
+  <a href="#how-client-data-is-extracted" class="md-nav__link">
     <span class="md-ellipsis">
-      Client Data in Docker
+      How Client Data is Extracted
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How Client Data is Extracted">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steps-to-extract-client-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps to Extract Client Data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-extracted-client-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Extracted Client Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
     </span>
   </a>
   
@@ -3285,21 +3564,73 @@
                   
 
 
-<h1 id="understanding-client-data-in-vmangos">Understanding Client Data in VMangos</h1>
-<h2 id="concept-of-client-data">Concept of Client Data</h2>
-<p>Client data refers to the game files extracted from the World of Warcraft client, including essential elements like maps and VMAP data. This data is crucial for the server to accurately replicate the game environment.</p>
-<h2 id="extracting-client-data">Extracting Client Data</h2>
-<p>To extract client data, you typically run a command in a terminal environment. Here's a simplified example:</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-v<span class="w"> </span>/path/to/client:/client<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-v<span class="w"> </span>/path/to/output:/output<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>vmap-extractor
-</code></pre></div>
-<p>In this command:
-- <code>/path/to/client</code> is the directory containing the game client.
-- <code>/path/to/output</code> is where the extracted data will be stored.</p>
-<h2 id="client-data-in-docker">Client Data in Docker</h2>
-<p>In Docker, client data can be stored in named volumes, which simplifies management and transfer. This approach makes it easy to share the extracted data between different systems or Docker containers.</p>
+<h1 id="client-data">Client Data</h1>
+<p>CMangos relies on client data to accurately represent the virtual world's physical environment. This data includes critical details such as terrain heights, road layouts, object positioning, and other environmental features. It enables the server to make informed decisions, especially when it comes to NPC pathfinding, collision detection, and other mechanics that depend on the spatial layout of the game world.</p>
+<hr />
+<h2 id="what-is-client-data">What is Client Data?</h2>
+<p>Client data refers to information about the virtual world’s structure, including:</p>
+<ul>
+<li>Terrain Heights: The elevation of hills, valleys, and flatlands.</li>
+<li>Road Networks: Pathways and roads that guide NPCs and players.</li>
+<li>Object Positioning: The placement of static objects like buildings, trees, and other world assets.</li>
+</ul>
+<p>This data is not pre-baked into the server code. Instead, the server relies on external files generated from the game client to understand the world’s geography. Without this data, the server would lack context for NPC movement, environmental interactions, and spatial awareness.</p>
+<hr />
+<h2 id="why-client-data-is-important">Why Client Data is Important</h2>
+<p>The extracted client data allows the server to:</p>
+<ul>
+<li>Improve NPC Pathfinding: NPCs can navigate complex terrain more realistically.</li>
+<li>Handle Collisions Accurately: Ensures characters and objects behave correctly when interacting with the environment.</li>
+<li>Optimize Server Performance: Reduces the need for complex runtime calculations by referencing pre-processed data.</li>
+</ul>
+<hr />
+<h2 id="how-client-data-is-extracted">How Client Data is Extracted</h2>
+<p>The extraction process involves analyzing the game client files to pull out relevant data, such as height maps and 3D models. This is done using tools provided within the CMangos Docker setup.</p>
+<h3 id="steps-to-extract-client-data">Steps to Extract Client Data</h3>
+<ol>
+<li>
+<p>Prepare Your Game Client:
+   Ensure you have a compatible version of the World of Warcraft client. The client version must match the CMangos server version you're working with.</p>
+</li>
+<li>
+<p>Mount the Client Directory:
+   Using Docker, mount the directory containing your game client into a Docker volume. This makes the client’s data accessible to the extraction tools.</p>
+</li>
+</ol>
+<p>Example:
+   <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>volume<span class="w"> </span>create<span class="w"> </span>cmangos-client-data
+docker<span class="w"> </span>run<span class="w"> </span>-v<span class="w"> </span>/path/to/client:/client<span class="w"> </span>-v<span class="w"> </span>cmangos-client-data:/data<span class="w"> </span>cmangos/tools<span class="w"> </span>extract
+</code></pre></div></p>
+<p>In this example:
+   - <code>/path/to/client</code> is the path to your local game client files.
+   - <code>cmangos-client-data</code> is the Docker volume where the extracted data will be stored.</p>
+<ol>
+<li>
+<p>Run the Extraction Tool:
+   The <code>extract</code> tool scans the client’s data, processes the models, height maps, and other files, and populates the Docker volume with the necessary data.</p>
+</li>
+<li>
+<p>Verify the Extraction:
+   After the process completes, check the <code>/data</code> volume to ensure the data has been successfully extracted.</p>
+</li>
+</ol>
+<hr />
+<h2 id="using-extracted-client-data">Using Extracted Client Data</h2>
+<p>Once the client data has been extracted:</p>
+<ul>
+<li>The Docker volume containing the data will be automatically mounted when you bring up the CMangos server with <code>docker-compose up</code>.</li>
+<li>The server will reference this data for tasks like NPC movement, environmental interactions, and collision detection—without requiring any additional setup from you.</li>
+</ul>
+<p>This approach ensures that the server can manage world data seamlessly, reducing the need for complex manual configurations.</p>
+<hr />
+<h2 id="summary">Summary</h2>
+<ul>
+<li>Client Data represents the physical layout of the game world (terrain, objects, roads).</li>
+<li>The data is extracted from the game client using Docker-based tools.</li>
+<li>Docker volumes simplify the process by storing extracted data for easy reuse.</li>
+<li>The server uses this data automatically during runtime to improve pathfinding, collision detection, and world interaction logic.</li>
+</ul>
+<p>By following this process, you ensure that your CMangos server has accurate, detailed knowledge of the game world, enhancing gameplay quality and server performance.</p>
 
 
 
@@ -3335,7 +3666,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../installation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installation">
+          <a href="../overview/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3345,7 +3676,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Installation
+                Overview
               </div>
             </div>
           </a>
