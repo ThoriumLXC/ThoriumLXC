@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mangos-docker-compose-setup" class="md-skip">
+        <a href="#docker-compose-setup" class="md-skip">
           Skip to content
         </a>
       
@@ -523,15 +523,6 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#downloading-the-project" class="md-nav__link">
-    <span class="md-ellipsis">
-      Downloading the Project
     </span>
   </a>
   
@@ -1051,7 +1042,7 @@
       <a href="../../cmangos-classic/overview/" class="md-nav__link">
         
   
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 4a2 2 0 0 0-2 2v11h2a3 3 0 0 0 3 3 3 3 0 0 0 3-3h6a3 3 0 0 0 3 3 3 3 0 0 0 3-3h2v-5l-3-4h-3V4m-7 2 4 4-4 4v-3H4V9h6m7 .5h2.5l1.97 2.5H17M6 15.5A1.5 1.5 0 0 1 7.5 17 1.5 1.5 0 0 1 6 18.5 1.5 1.5 0 0 1 4.5 17 1.5 1.5 0 0 1 6 15.5m12 0a1.5 1.5 0 0 1 1.5 1.5 1.5 1.5 0 0 1-1.5 1.5 1.5 1.5 0 0 1-1.5-1.5 1.5 1.5 0 0 1 1.5-1.5"/></svg>
   
   <span class="md-ellipsis">
     Overview
@@ -1654,6 +1645,8 @@
     <li class="md-nav__item">
       <a href="../../cmangos-tbc/overview/" class="md-nav__link">
         
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 4a2 2 0 0 0-2 2v11h2a3 3 0 0 0 3 3 3 3 0 0 0 3-3h6a3 3 0 0 0 3 3 3 3 0 0 0 3-3h2v-5l-3-4h-3V4m-7 2 4 4-4 4v-3H4V9h6m7 .5h2.5l1.97 2.5H17M6 15.5A1.5 1.5 0 0 1 7.5 17 1.5 1.5 0 0 1 6 18.5 1.5 1.5 0 0 1 4.5 17 1.5 1.5 0 0 1 6 15.5m12 0a1.5 1.5 0 0 1 1.5 1.5 1.5 1.5 0 0 1-1.5 1.5 1.5 1.5 0 0 1-1.5-1.5 1.5 1.5 0 0 1 1.5-1.5"/></svg>
   
   <span class="md-ellipsis">
     Overview
@@ -2279,6 +2272,8 @@
     <li class="md-nav__item">
       <a href="../../cmangos-wotlk/overview/" class="md-nav__link">
         
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 4a2 2 0 0 0-2 2v11h2a3 3 0 0 0 3 3 3 3 0 0 0 3-3h6a3 3 0 0 0 3 3 3 3 0 0 0 3-3h2v-5l-3-4h-3V4m-7 2 4 4-4 4v-3H4V9h6m7 .5h2.5l1.97 2.5H17M6 15.5A1.5 1.5 0 0 1 7.5 17 1.5 1.5 0 0 1 6 18.5 1.5 1.5 0 0 1 4.5 17 1.5 1.5 0 0 1 6 15.5m12 0a1.5 1.5 0 0 1 1.5 1.5 1.5 1.5 0 0 1-1.5 1.5 1.5 1.5 0 0 1-1.5-1.5 1.5 1.5 0 0 1 1.5-1.5"/></svg>
   
   <span class="md-ellipsis">
     Overview
@@ -3506,15 +3501,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#downloading-the-project" class="md-nav__link">
-    <span class="md-ellipsis">
-      Downloading the Project
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#pulling-docker-images" class="md-nav__link">
     <span class="md-ellipsis">
       Pulling Docker Images
@@ -3583,57 +3569,120 @@
                   
 
 
-<h1 id="mangos-docker-compose-setup">Mangos Docker Compose Setup</h1>
-<p>This guide explains how to acquire a Docker Compose configuration for the Mangos World of Warcraft emulation server, and then run the server. It assumes that Docker and Docker Compose are already installed on your system—if you have not installed them yet, please visit the official Docker website to download and set them up first. All commands shown here should be typed into a Terminal if you are on macOS or Linux, or a Command Prompt/PowerShell if you are on Windows.</p>
+<h1 id="docker-compose-setup">Docker Compose Setup</h1>
+<p>ThoriumLXC makes downloadable git repositories available that provide the Docker configurations for running the emulation servers. Th</p>
+<p>It assumes that Docker and Docker Compose are already installed on your system, if you have not installed them yet, please visit the <a href="../installation/">installation</a> guide. All commands shown here should be typed into a Terminal.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This page assumes the name of the compose file is <code>compose.yaml</code></p>
+</div>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>Before you begin, ensure you have Docker and Docker Compose installed and configured on your machine. Running the command below confirms that Docker is accessible:</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>--version
-</code></pre></div>
-<p>If this command does not show a valid Docker version, refer to the official documentation on Docker’s website to install and set up Docker correctly. You can also verify Docker Compose similarly:</p>
-<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>--version
-</code></pre></div>
+<pre><code>docker --version
+</code></pre>
+<p>If this command does not show a valid Docker version, refer to the official documentation on Docker’s website to install and set up Docker correctly. This will look something like the following, likely with a different version &amp; build ID (<code>27.3.1</code>, <code>ce12230</code>):</p>
+<pre><code>Docker version 27.3.1, build ce12230
+</code></pre>
+<p><img alt="PowerShell Sample" src="../../assets/images/explainers/powershell.png" /></p>
+<p>You can also verify Docker Compose by checking for its helpdoc:</p>
+<pre><code>docker compose --help
+</code></pre>
+<p>which will look like roughly like the following:</p>
+<pre><code>Usage:  docker compose [OPTIONS] COMMAND
+
+Define and run multi-container applications with Docker
+
+Options:
+    --all-resources              Include all resources, even those not
+                                used by services
+    --ansi string                Control when to print ANSI control
+                                characters ("never"|"always"|"auto")
+                                (default "auto")
+    --compatibility              Run compose in backward compatibility mode
+    --dry-run                    Execute command in dry run mode
+    --env-file stringArray       Specify an alternate environment file
+-f, --file stringArray           Compose configuration files
+    --parallel int               Control max parallelism, -1 for
+                                unlimited (default -1)
+    --profile stringArray        Specify a profile to enable
+    --progress string            Set type of progress output (auto,
+                                tty, plain, json, quiet) (default "auto")
+    --project-directory string   Specify an alternate working directory
+                                (default: the path of the, first
+                                specified, Compose file)
+-p, --project-name string        Project name
+
+Commands:
+    attach      Attach local standard input, output, and error streams to a service's running container
+    build       Build or rebuild services
+    config      Parse, resolve and render compose file in canonical format
+    cp          Copy files/folders between a service container and the local filesystem
+    create      Creates containers for a service
+    down        Stop and remove containers, networks
+    events      Receive real time events from containers
+    exec        Execute a command in a running container
+    export      Export a service container's filesystem as a tar archive
+    images      List images used by the created containers
+    kill        Force stop service containers
+    logs        View output from containers
+    ls          List running compose projects
+    pause       Pause services
+    port        Print the public port for a port binding
+    ps          List containers
+    pull        Pull service images
+    push        Push service images
+    restart     Restart service containers
+    rm          Removes stopped service containers
+    run         Run a one-off command on a service
+    scale       Scale services
+    start       Start services
+    stats       Display a live stream of container(s) resource usage statistics
+    stop        Stop services
+    top         Display the running processes
+    unpause     Unpause services
+    up          Create and start containers
+    version     Show the Docker Compose version information
+    wait        Block until containers of all (or specified) services stop.
+    watch       Watch build context for service and rebuild/refresh containers when files are updated
+
+Run 'docker compose COMMAND --help' for more information on a command.
+</code></pre>
 <p>Confirming both means you are ready to proceed.</p>
-<h2 id="downloading-the-project">Downloading the Project</h2>
-<p>To get the files for this Mangos Docker Compose setup, visit the repository on GitHub. Under the green “Code” button (or in the “Releases” section, if one is provided), you will see an option to download a ZIP archive of the code. Download and save the ZIP archive to a location on your computer, then extract its contents. You will end up with a folder that includes the <code>docker-compose.yml</code> file and other necessary files for the Mangos server.</p>
-<p>After extracting, open your Terminal or Command Prompt and navigate to the newly created folder. For instance, you could type something like:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/path/to/unzipped/folder
-</code></pre></div>
-<p>Adjust the command above to match the folder location where you extracted the archive. Once you are inside this folder, the Docker Compose commands explained in the rest of this document will apply.</p>
 <h2 id="pulling-docker-images">Pulling Docker Images</h2>
 <p>When you are in the project folder, you can download the images that the Docker Compose configuration requires by typing:</p>
-<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>pull
-</code></pre></div>
-<p>This command fetches all the images declared in the <code>docker-compose.yml</code> file and stores them on your machine. If you already have a compatible version of these images, Docker may skip downloading or perform a quick update check. Think of Docker images as the building blocks that your containers will be created from.</p>
+<pre><code>docker compose pull
+</code></pre>
+<p>This command fetches all the images declared in the <code>compose.yml</code> file and stores them on your machine. If you already have a compatible version of these images, Docker may skip downloading or perform a quick update check. Think of Docker images as the building blocks that your containers will be created from.</p>
 <h2 id="starting-the-server">Starting the Server</h2>
 <p>Once the images are ready, you can start the Mangos server by typing:</p>
-<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>up
-</code></pre></div>
-<p>This action starts each container specified in the <code>docker-compose.yml</code> file. The Terminal will display output that shows the server initiating. If you want the server to keep running in the background so you can use the same Terminal window for other tasks, you can add the <code>-d</code> flag:</p>
-<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>up<span class="w"> </span>-d
-</code></pre></div>
+<pre><code>docker compose up
+</code></pre>
+<p>This action starts each container specified in the <code>compose.yml</code> file. The Terminal will display output that shows the server initiating. If you want the server to keep running in the background so you can use the same Terminal window for other tasks, you can add the <code>-d</code> flag:</p>
+<pre><code>docker compose up -d
+</code></pre>
 <p>By adding <code>-d</code>, you instruct Docker Compose to run in “detached” mode, meaning the containers keep running until you stop them, even if you close your Terminal window.</p>
 <h2 id="stopping-the-server">Stopping the Server</h2>
 <p>If you need to pause the running server without removing the containers, you can type:</p>
-<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>stop
-</code></pre></div>
+<pre><code>docker compose stop
+</code></pre>
 <p>Stopping works well if you plan to resume operations soon and would like to avoid recreating containers. It halts the running processes but leaves them on your system in a stopped state.</p>
 <h2 id="removing-containers">Removing Containers</h2>
 <p>To remove the containers completely and free up any resources they consume, you can type:</p>
-<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>down
-</code></pre></div>
+<pre><code>docker compose down
+</code></pre>
 <p>Removing containers can be useful if you want a clean environment each time you start the server. When you run <code>down</code>, Docker Compose not only stops the containers but also deletes them from your system.</p>
 <h2 id="full-cleanup">Full Cleanup</h2>
 <p>If you wish to remove all the containers and the underlying images they depend on, you can type:</p>
-<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>down<span class="w"> </span>--rmi<span class="w"> </span>all
-</code></pre></div>
+<pre><code>docker compose down --rmi all
+</code></pre>
 <p>This command fully cleans everything associated with this project’s Docker environment, including the images. Keep in mind that if you run this command and later choose to start the server again, Docker will need to pull the images once more, which may take some time depending on your internet speed.</p>
 <h2 id="viewing-logs">Viewing Logs</h2>
 <p>While the server is running, you can inspect its logs by typing:</p>
-<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>logs
-</code></pre></div>
+<pre><code>docker compose logs
+</code></pre>
 <p>This command shows the output generated by the containers. If you want to follow the logs in real time and watch new entries as they appear, add the <code>-f</code> flag:</p>
-<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>logs<span class="w"> </span>-f
-</code></pre></div>
+<pre><code>docker compose logs -f
+</code></pre>
 <p>Viewing the logs is a practical way to troubleshoot any issues or just keep track of what the server is doing.</p>
 
 

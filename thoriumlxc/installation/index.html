@@ -523,6 +523,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Verifying the Docker Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frequently-encountered-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frequently Encountered Problems
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1006,7 +1021,7 @@
       <a href="../../cmangos-classic/overview/" class="md-nav__link">
         
   
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 4a2 2 0 0 0-2 2v11h2a3 3 0 0 0 3 3 3 3 0 0 0 3-3h6a3 3 0 0 0 3 3 3 3 0 0 0 3-3h2v-5l-3-4h-3V4m-7 2 4 4-4 4v-3H4V9h6m7 .5h2.5l1.97 2.5H17M6 15.5A1.5 1.5 0 0 1 7.5 17 1.5 1.5 0 0 1 6 18.5 1.5 1.5 0 0 1 4.5 17 1.5 1.5 0 0 1 6 15.5m12 0a1.5 1.5 0 0 1 1.5 1.5 1.5 1.5 0 0 1-1.5 1.5 1.5 1.5 0 0 1-1.5-1.5 1.5 1.5 0 0 1 1.5-1.5"/></svg>
   
   <span class="md-ellipsis">
     Overview
@@ -1609,6 +1624,8 @@
     <li class="md-nav__item">
       <a href="../../cmangos-tbc/overview/" class="md-nav__link">
         
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 4a2 2 0 0 0-2 2v11h2a3 3 0 0 0 3 3 3 3 0 0 0 3-3h6a3 3 0 0 0 3 3 3 3 0 0 0 3-3h2v-5l-3-4h-3V4m-7 2 4 4-4 4v-3H4V9h6m7 .5h2.5l1.97 2.5H17M6 15.5A1.5 1.5 0 0 1 7.5 17 1.5 1.5 0 0 1 6 18.5 1.5 1.5 0 0 1 4.5 17 1.5 1.5 0 0 1 6 15.5m12 0a1.5 1.5 0 0 1 1.5 1.5 1.5 1.5 0 0 1-1.5 1.5 1.5 1.5 0 0 1-1.5-1.5 1.5 1.5 0 0 1 1.5-1.5"/></svg>
   
   <span class="md-ellipsis">
     Overview
@@ -2234,6 +2251,8 @@
     <li class="md-nav__item">
       <a href="../../cmangos-wotlk/overview/" class="md-nav__link">
         
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 4a2 2 0 0 0-2 2v11h2a3 3 0 0 0 3 3 3 3 0 0 0 3-3h6a3 3 0 0 0 3 3 3 3 0 0 0 3-3h2v-5l-3-4h-3V4m-7 2 4 4-4 4v-3H4V9h6m7 .5h2.5l1.97 2.5H17M6 15.5A1.5 1.5 0 0 1 7.5 17 1.5 1.5 0 0 1 6 18.5 1.5 1.5 0 0 1 4.5 17 1.5 1.5 0 0 1 6 15.5m12 0a1.5 1.5 0 0 1 1.5 1.5 1.5 1.5 0 0 1-1.5 1.5 1.5 1.5 0 0 1-1.5-1.5 1.5 1.5 0 0 1 1.5-1.5"/></svg>
   
   <span class="md-ellipsis">
     Overview
@@ -3476,6 +3495,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Verifying the Docker Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frequently-encountered-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frequently Encountered Problems
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3494,45 +3528,80 @@
 
 
 <h1 id="installation-guide">Installation Guide</h1>
+<p>ThoriumLXC is an opinionated set of container images designed to run CMangos, VMangos, and similar projects within Docker containers.Container images are like packaged “blueprints” that include everything an application needs to run—its code, system tools, and libraries. Instead of installing software on each machine and worrying about differences in settings, you can think of container images as self-contained boxes that work the same wherever they go.</p>
+<p><img alt="containers runtime explainer" src="../../assets/images/explainers/containers.png" /></p>
+<p><a href="https://www.docker.com/">Docker</a> is a popular tool that creates, shares, and runs these containers. It takes a container image, places it in a controlled environment (“the container”), and ensures it runs the same way on any system. This makes it simpler to ship, and maintain software without worrying about the nitty-gritty details of each machine’s setup.</p>
 <h2 id="installing-docker">Installing Docker</h2>
 <p>Follow the instructions below to install Docker on your operating system:</p>
-<table>
-<thead>
-<tr>
-<th>Operating System</th>
-<th>Installation Guide</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Windows</td>
-<td><a href="https://docs.docker.com/desktop/install/windows-install/">Install Docker on Windows</a></td>
-</tr>
-<tr>
-<td>MacOS</td>
-<td><a href="https://docs.docker.com/desktop/install/mac-install/">Install Docker on MacOS</a></td>
-</tr>
-<tr>
-<td>Linux</td>
-<td><a href="https://docs.docker.com/engine/install/">Install Docker on Linux</a></td>
-</tr>
-</tbody>
-</table>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows</label><label for="__tabbed_1_2">MacOS</label><label for="__tabbed_1_3">Ubuntu (Linux)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><a href="https://docs.docker.com/desktop/install/windows-install/">Install Docker on Windows</a></p>
+</div>
+<div class="tabbed-block">
+<p><a href="https://docs.docker.com/desktop/install/mac-install/">Install Docker on MacOS</a></p>
+</div>
+<div class="tabbed-block">
+<p><a href="https://docs.docker.com/engine/install/">Install Docker on Linux</a></p>
+</div>
+</div>
+</div>
+<p>When this has been completed, you should have an interface that looks something like this:</p>
+<p><img alt="docker desktop ui" src="../../assets/images/explainers/docker-desktop.webp" /></p>
+<p>If you are able to see a screen like this, Docker is installed.</p>
 <h2 id="ensuring-a-terminal-environment">Ensuring a Terminal Environment</h2>
-<p>Ensure you have a terminal environment installed:</p>
-<ul>
-<li><strong>Windows</strong>: Use <a href="https://learn.microsoft.com/en-us/windows/terminal/install">Windows Terminal</a>.</li>
-<li><strong>MacOS</strong>: The default Terminal app is sufficient.</li>
-<li><strong>Linux</strong>: Most distributions include a terminal by default.</li>
-</ul>
+<p>A terminal environment is a text-based window where you type commands to communicate directly with a computer’s operating system. Think of it as a simple interface—no buttons or icons—just typed instructions and responses. You'll need a terminal to work with <a href="https://docs.docker.com/compose/">Docker Compose</a>, which is a tool for defining and running multi-container applications. It is the key to unlocking a streamlined and efficient development and deployment experience.</p>
+<p>To ensure you have a terminal environment installed:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Windows</label><label for="__tabbed_2_2">MacOS</label><label for="__tabbed_2_3">Ubuntu (Linux)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Use <a href="https://learn.microsoft.com/en-us/windows/terminal/install">Windows Terminal</a>.</p>
+</div>
+<div class="tabbed-block">
+<p>The default <a href="https://support.apple.com/en-ca/guide/terminal/welcome/mac">Terminal</a> app is sufficient.</p>
+</div>
+<div class="tabbed-block">
+<p>Most distributions include a <a href="https://ubuntu.com/tutorials/command-line-for-beginners#1-overview">terminal</a> by default.</p>
+</div>
+</div>
+</div>
 <p>You can verify the terminal is working by running:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hello&quot;</span>
-</code></pre></div>
+<pre><code>echo "Hello"
+</code></pre>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:4"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><input id="__tabbed_3_4" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Windows</label><label for="__tabbed_3_2">MacOS</label><label for="__tabbed_3_3">Ubuntu (Linux)</label><label for="__tabbed_3_4">Ubuntu (SSH)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="PowerShell Sample" src="../../assets/images/explainers/powershell.png" />
+Powershell Lorem Ipsum</p>
+</div>
+<div class="tabbed-block">
+<p><img alt="PowerShell Sample" src="../../assets/images/explainers/powershell.png" />
+Powershell Lorem Ipsum</p>
+</div>
+<div class="tabbed-block">
+<p><img alt="PowerShell Sample" src="../../assets/images/explainers/powershell.png" />
+Powershell Lorem Ipsum</p>
+</div>
+<div class="tabbed-block">
+<p><img alt="PowerShell Sample" src="../../assets/images/explainers/powershell.png" />
+Powershell Lorem Ipsum</p>
+</div>
+</div>
+</div>
 <h2 id="verifying-the-docker-installation">Verifying the Docker Installation</h2>
-<p>Once Docker is installed, verify the installation using the "Hello World" container:</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>hello-world
-</code></pre></div>
+<p>Once Docker and a Terminal is installed, verify the installation using the "Hello World" container. This is a simple container that is responsible for printing out a welcome message.</p>
+<p>Using the terminal from the previous step, type out (or copy) the following text into the terminal</p>
+<pre><code>docker run hello-world
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Running <code>docker run hello-world</code></p>
+<p><img alt="PowerShell Sample" src="../../assets/images/explainers/powershell.png" /></p>
+</div>
 <p>If the installation was successful, you should see a message confirming that Docker is working correctly.</p>
+<p><img alt="docker run hello-world" src="../../assets/images/explainers/docker-run-hello-world.png" /></p>
+<p>To learn more about the processes around <a href="../compose/"><code>docker compose</code></a>, you can read about it within the <a href="../compose/">compose overview</a>.</p>
+<h3 id="frequently-encountered-problems">Frequently Encountered Problems</h3>
+<p>If you encounter issues while trying to setup Docker, you can review the <a href="https://docs.docker.com/desktop/troubleshoot-and-support/troubleshoot/">troubleshooting</a> processes to resolve the issues.</p>
 
 
 
