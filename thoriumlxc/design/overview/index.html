@@ -24,7 +24,7 @@
     
     
       
-        <title>Philosophy - ThoriumLXC</title>
+        <title>Vision - ThoriumLXC</title>
       
     
     
@@ -57,11 +57,6 @@
     
     
     
-  <link
-    rel="stylesheet"
-    href="/assets/stylesheets/extra.css"
-  />
-
   </head>
   
   
@@ -114,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Philosophy
+              Vision
             
           </span>
         </div>
@@ -787,8 +782,10 @@
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 14h-1c0-3.87-3.13-7-7-7h-1V5.73A2 2 0 1 0 10 4c0 .74.4 1.39 1 1.73V7h-1c-3.87 0-7 3.13-7 7H2c-.55 0-1 .45-1 1v3c0 .55.45 1 1 1h1v1a2 2 0 0 0 2 2h14c1.11 0 2-.89 2-2v-1h1c.55 0 1-.45 1-1v-3c0-.55-.45-1-1-1M9.86 16.68l-1.18 1.18-1.18-1.18-1.18 1.18-1.18-1.18 1.18-1.18-1.18-1.18 1.18-1.18 1.18 1.18 1.18-1.18 1.18 1.18-1.18 1.18zm9 0-1.18 1.18-1.18-1.18-1.18 1.18-1.18-1.18 1.18-1.18-1.18-1.18 1.18-1.18 1.18 1.18 1.18-1.18 1.18 1.18-1.18 1.18z"/></svg>
+  
   <span class="md-ellipsis">
-    Philosophy
+    Vision
   </span>
   
 
@@ -798,8 +795,10 @@
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 14h-1c0-3.87-3.13-7-7-7h-1V5.73A2 2 0 1 0 10 4c0 .74.4 1.39 1 1.73V7h-1c-3.87 0-7 3.13-7 7H2c-.55 0-1 .45-1 1v3c0 .55.45 1 1 1h1v1a2 2 0 0 0 2 2h14c1.11 0 2-.89 2-2v-1h1c.55 0 1-.45 1-1v-3c0-.55-.45-1-1-1M9.86 16.68l-1.18 1.18-1.18-1.18-1.18 1.18-1.18-1.18 1.18-1.18-1.18-1.18 1.18-1.18 1.18 1.18 1.18-1.18 1.18 1.18-1.18 1.18zm9 0-1.18 1.18-1.18-1.18-1.18 1.18-1.18-1.18 1.18-1.18-1.18-1.18 1.18-1.18 1.18 1.18 1.18-1.18 1.18 1.18-1.18 1.18z"/></svg>
+  
   <span class="md-ellipsis">
-    Philosophy
+    Vision
   </span>
   
 
@@ -3562,23 +3561,42 @@
 
 
 <h1 id="overview">Overview</h1>
-<p>ThoriumLXC is a project focused on providing container images that can be used to spin up cMaNGOS/vMaNGOS server environments without needing to modify the base OS.</p>
+<p>ThoriumLXC aims to make it easier to set up and run popular game server emulators, including cMaNGOS, vMaNGOS, and AzerothCore. Instead of dealing with complex setups on your computer, ThoriumLXC provides “container images” that have all the necessary software. All you need is to pull the container, start it up, and you’re ready to explore—no tinkering with system files or library dependencies.</p>
+<p>The goal was to make it easier to spin up, experiment with, and shut down these servers as effortlessly as possible.</p>
 <h2 id="docker">Docker</h2>
-<p>Docker is a tool that packages software into self-contained “containers,” which include everything needed to run an application—its libraries, tools, and any system dependencies. You can think of each container as a portable box that remains the same regardless of where it’s opened. This consistency makes it easier to avoid those frustrating moments where something works on one computer but not another.</p>
-<p>By relying on Docker, setting up software becomes more straightforward because you only need to pull the container instead of installing several tools by hand. Updates are also simpler: if a new version of the application is released, you just download the latest container, which helps you avoid the messy cleanup or leftover files that sometimes occur with traditional upgrade processes. Similarly, fixing misconfigurations is less of a headache because you can remove a troublesome container entirely and start fresh.</p>
-<p>I chose Docker for ThoriumLXC because it simplfied spinning up and down servers in my homeserver. Using different Docker Compose files allowed managing different server versions without worrying about the base OS libraries (e.g. libmysqlclient). Plus, it provided a great opportunity to experiment with building container images, and patterns like the BuildDeps, Builder, Runtime and Final images.</p>
+<p>What is Docker?</p>
+<p>Docker is a tool that bundles an application (like a game server emulator) with all of its required components—code, libraries, system tools, and more—into a portable “container.” Think of it like a lunchbox: once everything is inside, it’s the same no matter where you open it.</p>
+<p>Why Docker for ThoriumLXC?</p>
+<ul>
+<li>No messy installs: No need to manually install multiple programs.</li>
+<li>Simple updates: If a new version of your favorite emulator is released, you just download the updated container—no leftover files to worry about.</li>
+<li>Quick resets: If something goes wrong, remove the container and start fresh in seconds.</li>
+</ul>
 <h2 id="docker-compose">Docker Compose</h2>
-<p>When a project depends on several containers, Docker Compose ensures they all work together smoothly. Rather than juggling multiple commands or manually wiring each container to the right place, you can define the entire setup in a single file. This configuration tells Docker exactly which containers you need, how they communicate with one another, and any resources they need to share. In this sense, Docker Compose acts like a coordinator, launching and managing all the containers at once, so you can focus on the actual application instead of spending time on the underlying infrastructure.</p>
+<p>When your setup needs multiple containers—like an emulator server plus a database—Docker Compose launches them all together with a single command. It acts as a coordinator, so you don’t have to start each piece one by one.</p>
+<p>Why Docker Compose for ThoriumLXC?</p>
+<ul>
+<li>Easier management: Launch or shut down every container at once.</li>
+<li>Clear organization: You define everything in a single file, making it simple to see how the pieces connect.</li>
+</ul>
 <h2 id="bazel">Bazel</h2>
-<p>I opted for Bazel in this project primarily to explore <code>rules_oci</code>, which offered a more refined approach compared to the earlier <code>rules_docker</code>. The previous ruleset had challenges with unexpected behaviors and complex internals (go dependencies), making it cumbersome in a number of ways.</p>
-<p>In contrast, <code>rules_oci</code> promised a simplified, streamlined interface as it dropped support for things like <code>container_run_and_extract</code>, and other rules that added a lot of dependency to them. When building with <code>rules_oci</code>, I inteneded up taking the approach of the build-deps, builder, runtime, and final image pattern as I felt it allowed me to leverage <code>docker run</code>, while still orchestrating everything with Bazel.</p>
-<p>The potential for hermetic builds is nice as well, as it meant that the same source code always produced bit-wise identical images.</p>
+<p>Bazel is a “build system”—it packages your code and files into the final container images, consistently producing the same results every time.</p>
+<p>Why Bazel for ThoriumLXC?</p>
+<ul>
+<li>Predictable builds: Every container image is built in a repeatable way, reducing surprises.</li>
+<li>Smooth experimentation: Building and testing new versions is easier when the process is the same every time.</li>
+</ul>
+<hr />
+<p>In short, ThoriumLXC streamlines hosting cMaNGOS, vMaNGOS, and AzerothCore servers by bundling them into containers that run anywhere. You don’t need to be a programmer or install tons of software—just download a container, run it, and start experimenting. With Docker, Docker Compose, and Bazel behind the scenes, you can focus on enjoying the experience rather than wrestling with system configurations. Have fun and explore on your own terms!</p>
 
 
 
 
 
 
+
+  
+  
 
 
 
@@ -3672,10 +3690,8 @@
     <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-  
       <script src="../../../assets/javascripts/bundle.60a45f97.min.js"></script>
       
     
-
   </body>
 </html>
