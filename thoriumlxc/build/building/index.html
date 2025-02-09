@@ -3597,30 +3597,57 @@
 
 
 <h1 id="builder-image">Builder Image</h1>
-<p>The Builder Image is the core component responsible for compiling the CMangos server. It handles the entire build process, from source code to final binary artifacts, ensuring consistency and reliability across different environments.</p>
-<hr />
+<p>The Builder Image is responsible for compiling the emulator server. It bundles in the source code and scripts for running the entire build process, from source code to final binary artifacts. If you have the builder image, you are capable of building your own variants of the source.</p>
+<div class="admonition info">
+<p class="admonition-title">What is: Compilation (Compiling)</p>
+<p>Imagine you wrote a recipe for a cake in a language only bakers understand, but your robot chef can’t read it. Compilation is like translating your recipe into simple step-by-step instructions that the robot can follow and make the exact cake.</p>
+</div>
+<pre class="mermaid"><code>flowchart TD
+    A[Build Deps Image] --&gt; B[Builder Image]
+    B --&gt;|Build Artifacts| D[Final Image]
+    C[Runtime Image] --&gt;|Runtime Dependencies| D
+
+    classDef highlighted stroke-width:2px;
+    classDef faded fill-opacity:0.2,stroke:#000,stroke-width:1px;
+
+    class A faded;
+    class B highlighted;
+    class C faded;
+    class D faded;</code></pre>
 <h2 id="what-is-the-builder-image">What is the Builder Image?</h2>
 <p>The Builder Image:</p>
 <ul>
-<li>Runs the Build Process: Executes all steps required to compile CMangos.</li>
-<li>Includes a Specific Source Version: The source code is pre-baked into the image, ensuring version consistency.</li>
-<li>Relies on Build Deps: Uses fixed dependencies from the Build Deps image to maintain a stable build environment.</li>
+<li>Runs the Build Process: Executes all steps required to compile the emulator server.</li>
+<li>Includes a Specific Source Version: The source code is pre-baked into the image.</li>
+<li>Relies on <a href="../deps/">Build Deps</a>: Uses fixed dependencies from the Build Deps image to maintain a stable build environment.</li>
 <li>Supports Customization: You can set environment variables or pass additional arguments when running the image with <code>docker run</code> to adjust the build process as needed.</li>
 </ul>
-<hr />
 <h2 id="running-the-builder-image">Running the Builder Image</h2>
-<p>To build CMangos using the Builder Image, you can run:</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-e<span class="w"> </span><span class="nv">BUILD_OPTION</span><span class="o">=</span>optimized<span class="w"> </span>mockorg/cmangos-builder:2024.02.03-1
+<p>Each image comes with its own instructions for building the emulator server with the Builder Image, but the general process can be understood like so.</p>
+<p>In a terminal, run a command </p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>cmangos-build<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;cmangos&quot;</span>:/opt/cmangos<span class="w"> </span>thoriumlxc/cmangos-builder:latest
 </code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If the builder image isn't already downloaded, this command will download it, which can take a while given your internet speeds.</p>
+</div>
 <ul>
-<li><code>-e BUILD_OPTION=optimized</code> sets an environment variable that customizes the build.</li>
-<li><code>mockorg/cmangos-builder:2024.02.03-1</code> refers to the specific version of the Builder Image.</li>
+<li><code>docker run</code> is telling Docker to run the application contained within the image.</li>
+<li><code>thoriumlxc/cmangos-builder:latest</code> refers to the the Builder Image, which in this case is whatever is the most recently released version.</li>
+<li><code>--name cmangos-build</code> is telling Docker what you name this container you are spinning up.</li>
+<li><code>-v "cmangos":/opt/cmangos</code> makes available the folder <code>cmangos</code> on your machine, to the Docker environment. The build will write all of the server binaries to that <code>cmangos</code> folder on your side. <code>/opt/cmangos</code> is the folder that the build process sees.</li>
 </ul>
-<p>After the build completes, the compiled artifacts are placed in an output directory inside the container. You can extract these artifacts by mounting a volume:</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-v<span class="w"> </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/output:/output<span class="w"> </span>mockorg/cmangos-builder:2024.02.03-1
-</code></pre></div>
-<p>This command saves the build results to your local <code>output</code> folder.</p>
-<hr />
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Depending on your computer, this may take a while.</p>
+</div>
+<p>After the build completes, the compiled artifacts are placed in an output directory inside the container, called <code>/opt/cmangos</code>. Since this directory was mounted, the files will already be written down in the folder <code>cmangos</code>.</p>
+<pre><code>.
+├── compose.yaml
+├── mangosd.conf
+├── README.md
+└── realmd.conf
+</code></pre>
 <h2 id="hermetic-builds-explained">Hermetic Builds Explained</h2>
 <p>The Builder Image is designed to produce hermetic builds. But what does "hermetic" mean in this context?</p>
 <p>In simple terms:</p>

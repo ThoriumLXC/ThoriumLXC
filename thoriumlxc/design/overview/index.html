@@ -3561,33 +3561,43 @@
 
 
 <h1 id="overview">Overview</h1>
-<p>ThoriumLXC aims to make it easier to set up and run popular game server emulators, including cMaNGOS, vMaNGOS, and AzerothCore. Instead of dealing with complex setups on your computer, ThoriumLXC provides “container images” that have all the necessary software. All you need is to pull the container, start it up, and you’re ready to explore—no tinkering with system files or library dependencies.</p>
-<p>The goal was to make it easier to spin up, experiment with, and shut down these servers as effortlessly as possible.</p>
+<p>I started ThoriumLXC after spending some time experimenting with emulator game servers. Switching between server versions or variants but resuming progress from a backup often failed. There were several containerized solutions available for these emulator services, but each approached things differently, and I felt like I was starting from scratch each time.</p>
+<p>That's when I started working on ThoriumLXC, hoping to create a plug-and-play solution for easily spinning up different servers. The idea was simple: stop a server at any time (&amp; backup the game data) and start it back up later without any hassle.</p>
+<p>For running these environments, I decided to use Docker and Docker Compose since they make starting and stopping services so much easier. For building the container images, I went with Bazel because I wanted to see if I could make the build process more predictable. In simple terms, every build would always produce exactly the same result, no matter where or when it runs. It also gave me a chance to experiment with <code>rules_oci</code>, a new way in Bazel of building container images.</p>
 <h2 id="docker">Docker</h2>
-<p>What is Docker?</p>
-<p>Docker is a tool that bundles an application (like a game server emulator) with all of its required components—code, libraries, system tools, and more—into a portable “container.” Think of it like a lunchbox: once everything is inside, it’s the same no matter where you open it.</p>
+<p>Docker is a tool that bundles an application (like a game server emulator) with everything it needs—code, libraries, system tools, and more—into a portable "container".</p>
+<p>Think of it like a lunchbox: once everything is inside, it's the same no matter where you open it.</p>
+<p>I've used containers while working within Cloud environments, and for services I self-host on my own home servers. I find it makes things easier, especially when it comes to things like backups, moving between hardware, or stop/start projects.</p>
 <p>Why Docker for ThoriumLXC?</p>
 <ul>
-<li>No messy installs: No need to manually install multiple programs.</li>
-<li>Simple updates: If a new version of your favorite emulator is released, you just download the updated container—no leftover files to worry about.</li>
-<li>Quick resets: If something goes wrong, remove the container and start fresh in seconds.</li>
+<li>No installs: No need to manually install runtime libraries or handle multiple programs.</li>
+<li>Simple updates: If a new version is released, you just download the updated container.</li>
+<li>Quick resets: If something goes wrong, remove the container and start fresh.</li>
+<li>Portable: Moving to different hardware is easy—just restore the game data from a backup</li>
+<li>Rollbacks: If something is off in a new version, just use an older version tag.</li>
 </ul>
 <h2 id="docker-compose">Docker Compose</h2>
-<p>When your setup needs multiple containers—like an emulator server plus a database—Docker Compose launches them all together with a single command. It acts as a coordinator, so you don’t have to start each piece one by one.</p>
+<p>When your setup needs multiple containers, <em>like an emulator server plus a database</em>, Docker Compose launches them all together with a single command and manages them as a group. It acts as a coordinator, so you don't have to start each piece one by one. This handles thing like dependencies, where a server relies on a database being up to start correctly.</p>
 <p>Why Docker Compose for ThoriumLXC?</p>
 <ul>
 <li>Easier management: Launch or shut down every container at once.</li>
+<li>Portable configuration: Create a repository with a configuration that can be booted up quickly.</li>
 <li>Clear organization: You define everything in a single file, making it simple to see how the pieces connect.</li>
+<li>Administration: You can easily bring along backups, supporting services, and configuration files.</li>
 </ul>
 <h2 id="bazel">Bazel</h2>
-<p>Bazel is a “build system”—it packages your code and files into the final container images, consistently producing the same results every time.</p>
+<p>Bazel is a "build system"—it packages your code and files into the final container images, consistently producing the same results every time. This means that for a given version of the emulator code, the build will produce an identical container image every time.</p>
+<p>I chose Bazel because I was already familiar with it, and wanted to take the opportunity to work with the new <code>rules_oci</code> ruleset, which makes it easier to build container images within Bazel. The <code>rules_oci</code> offer a different experience than working with Dockerfiles, and has notable quirks when it comes to ad-hoc scripts. This resulted in a different <a href="../../build/overview/">build experience</a> that worked out, but probably isn't the best practice.</p>
+<p>One of Bazel's big advantages is its support for hermetic builds. This means that identical source files would produce identical containers.</p>
 <p>Why Bazel for ThoriumLXC?</p>
 <ul>
 <li>Predictable builds: Every container image is built in a repeatable way, reducing surprises.</li>
+<li>Variant Management: Managing different versions or optional builds is easy.</li>
 <li>Smooth experimentation: Building and testing new versions is easier when the process is the same every time.</li>
+<li>Hermetic Outputs: If the container image is the same as the source, then it's easier to confirm no tampering.</li>
 </ul>
 <hr />
-<p>In short, ThoriumLXC streamlines hosting cMaNGOS, vMaNGOS, and AzerothCore servers by bundling them into containers that run anywhere. You don’t need to be a programmer or install tons of software—just download a container, run it, and start experimenting. With Docker, Docker Compose, and Bazel behind the scenes, you can focus on enjoying the experience rather than wrestling with system configurations. Have fun and explore on your own terms!</p>
+<p>In short, I mostly just wanted to tinker with Bazel and figured it would be pretty straightforward.</p>
 
 
 

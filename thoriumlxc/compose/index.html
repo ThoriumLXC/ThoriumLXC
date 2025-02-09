@@ -598,6 +598,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#attaching-to-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attaching to the Server
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#stopping-the-server" class="md-nav__link">
     <span class="md-ellipsis">
       Stopping the Server
@@ -3582,6 +3591,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#attaching-to-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attaching to the Server
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#stopping-the-server" class="md-nav__link">
     <span class="md-ellipsis">
       Stopping the Server
@@ -3633,23 +3651,28 @@
 
 
 <h1 id="docker-compose-setup">Docker Compose Setup</h1>
-<p>ThoriumLXC makes downloadable git repositories available that provide the Docker configurations for running the emulation servers. Th</p>
-<p>It assumes that Docker and Docker Compose are already installed on your system, if you have not installed them yet, please visit the <a href="../installation/">installation</a> guide. All commands shown here should be typed into a Terminal.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>This page assumes the name of the compose file is <code>compose.yaml</code></p>
+<p>ThoriumLXC makes downloadable git repositories available that provide the Docker configurations for running the emulation servers. This guide help you with understanding the available commands.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This page assumes the name of the compose file is <code>compose.yaml</code>, and that you are running the commands within the directory containing the <code>compose.yaml</code> file.</p>
+<pre><code>.
+├── compose.yaml
+├── mangosd.conf
+├── README.md
+└── realmd.conf
+</code></pre>
 </div>
 <h2 id="prerequisites">Prerequisites</h2>
-<p>Before you begin, ensure you have Docker and Docker Compose installed and configured on your machine. Running the command below confirms that Docker is accessible:</p>
+<p>Before you begin, ensure you have Docker and Docker Compose installed and configured on your machine. Running the command below within a Terminal environment confirms that Docker is accessible:</p>
 <pre><code>docker --version
 </code></pre>
-<p>If this command does not show a valid Docker version, refer to the official documentation on Docker’s website to install and set up Docker correctly. This will look something like the following, likely with a different version &amp; build ID (<code>27.3.1</code>, <code>ce12230</code>):</p>
+<p>If this command does not show a valid Docker version, refer to the <a href="../installation/#verifying-the-docker-installation">official documentation on Docker’s website to install</a> and set up Docker correctly. This will look something like the following, likely with a different version &amp; build ID (<code>27.3.1</code>, <code>ce12230</code>):</p>
 <pre><code>Docker version 27.3.1, build ce12230
 </code></pre>
 <p>You can also verify Docker Compose by checking for its helpdoc:</p>
 <pre><code>docker compose --help
 </code></pre>
-<p>which will look like roughly like the following:</p>
+<p>which will look roughly like the following:</p>
 <pre><code>Usage:  docker compose [OPTIONS] COMMAND
 
 Define and run multi-container applications with Docker
@@ -3709,20 +3732,35 @@ Commands:
 
 Run 'docker compose COMMAND --help' for more information on a command.
 </code></pre>
-<p>Confirming both means you are ready to proceed.</p>
+<p>After you have confirmed the above, it means you are ready to proceed with this guide.</p>
 <h2 id="pulling-docker-images">Pulling Docker Images</h2>
 <p>When you are in the project folder, you can download the images that the Docker Compose configuration requires by typing:</p>
 <pre><code>docker compose pull
 </code></pre>
-<p>This command fetches all the images declared in the <code>compose.yml</code> file and stores them on your machine. If you already have a compatible version of these images, Docker may skip downloading or perform a quick update check. Think of Docker images as the building blocks that your containers will be created from.</p>
+<p>This command fetches all the images declared in the <code>compose.yml</code> file and stores them on your machine. If you already have a compatible version of these images, Docker may skip downloading or perform a quick update check.</p>
+<p>Think of container images as downloading applications (binaries) from your browser.</p>
 <h2 id="starting-the-server">Starting the Server</h2>
-<p>Once the images are ready, you can start the Mangos server by typing:</p>
+<p>Once the images are ready, you can start the emulation server by typing:</p>
 <pre><code>docker compose up
 </code></pre>
 <p>This action starts each container specified in the <code>compose.yml</code> file. The Terminal will display output that shows the server initiating. If you want the server to keep running in the background so you can use the same Terminal window for other tasks, you can add the <code>-d</code> flag:</p>
 <pre><code>docker compose up -d
 </code></pre>
-<p>By adding <code>-d</code>, you instruct Docker Compose to run in “detached” mode, meaning the containers keep running until you stop them, even if you close your Terminal window.</p>
+<p>By adding <code>-d</code>, you instruct Docker Compose to run in "detached" mode, meaning the containers keep running until you stop them, even if you close your Terminal window.</p>
+<h2 id="attaching-to-the-server">Attaching to the Server</h2>
+<p>Once the server is running, you may want to attach to it to interact with the server. To attach to a running server, use:</p>
+<pre><code>docker compose attach &lt;service_name&gt;
+</code></pre>
+<p>Replace <code>&lt;service_name&gt;</code> with the name of the service defined in your <code>compose.yml</code> file, such as <code>mangosd</code>. This command connects your terminal to the container’s standard output, letting you monitor logs and server activity in real time.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Avoid canceling the <code>attach</code> command using <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span> (or equivalen for your operating system), as this will stop the server. To safely detach without interrupting the server, press:</p>
+<ul>
+<li><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-p">P</kbd></span> <em>then</em> <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-q">Q</kbd></span> on Linux/Mac</li>
+<li><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-p">P</kbd></span> <em>then</em> <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-q">Q</kbd></span> on Windows (PowerShell or Command Prompt)</li>
+</ul>
+<p>If you do accidently close it, you can just run the steps outlined in "Starting the Server"</p>
+</div>
 <h2 id="stopping-the-server">Stopping the Server</h2>
 <p>If you need to pause the running server without removing the containers, you can type:</p>
 <pre><code>docker compose stop

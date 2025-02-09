@@ -924,15 +924,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deterministic-builds-with-bazel-and-rules-oci" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deterministic Builds with Bazel and Rules OCI
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#the-builder-image" class="md-nav__link">
     <span class="md-ellipsis">
       The Builder Image
@@ -945,15 +936,6 @@
   <a href="#how-it-all-fits-together" class="md-nav__link">
     <span class="md-ellipsis">
       How It All Fits Together
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
     </span>
   </a>
   
@@ -3546,15 +3528,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deterministic-builds-with-bazel-and-rules-oci" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deterministic Builds with Bazel and Rules OCI
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#the-builder-image" class="md-nav__link">
     <span class="md-ellipsis">
       The Builder Image
@@ -3567,15 +3540,6 @@
   <a href="#how-it-all-fits-together" class="md-nav__link">
     <span class="md-ellipsis">
       How It All Fits Together
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
     </span>
   </a>
   
@@ -3597,52 +3561,41 @@
 
 
 <h1 id="build-deps">Build Deps</h1>
-<p>The CMangos Docker image architecture follows a modular approach, breaking down the build process into distinct layers for consistency, reproducibility, and maintainability. A critical part of this architecture is the Build Deps layer, which manages the foundational build dependencies required to compile the CMangos server.</p>
-<hr />
+<p>ThoriumLXC container image architecture follows a modular approach, breaking down the build process into distinct layers. The starting point of this architecture is the Build Dependencies layer, which manages the libraries, tools and system packages required to compile the emulator server.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Build Dependencies are often shortened to "BuildDeps" or just "Deps"</p>
+</div>
+<pre class="mermaid"><code>flowchart TD
+    A[Build Deps Image] --&gt; B[Builder Image]
+    B --&gt;|Build Artifacts| D[Final Image]
+    C[Runtime Image] --&gt;|Runtime Dependencies| D
+
+    classDef highlighted stroke-width:2px;
+    classDef faded fill-opacity:0.2,stroke:#000,stroke-width:1px;
+
+    class A highlighted;
+    class B faded;
+    class C faded;
+    class D faded;</code></pre>
 <h2 id="what-are-build-deps">What are Build Deps?</h2>
-<p>Build Deps (short for <em>Build Dependencies</em>) refer to the essential system libraries, development tools, and other dependencies needed to build the CMangos project. These include:</p>
+<p>Build Deps (short for <em>Build Dependencies</em>) refer to the essential system libraries, development tools, and other dependencies needed to build the emulator server. These include:</p>
 <ul>
 <li>Standard Libraries (e.g., <code>libc</code>, <code>libssl</code>)</li>
 <li>Development Tools (e.g., <code>gcc</code>, <code>make</code>, <code>cmake</code>)</li>
-<li>Debian Packages required for compiling the source code</li>
+<li><a href="https://www.debian.org/">Debian</a> Packages required for compiling the source code</li>
 <li>Other system-level dependencies essential for the build process</li>
 </ul>
-<p>These dependencies are only used during the build phase and are not included in the final runtime image, keeping the production environment clean and lightweight.</p>
-<hr />
-<h2 id="deterministic-builds-with-bazel-and-rules-oci">Deterministic Builds with Bazel and Rules OCI</h2>
-<p>To ensure that builds are deterministic—meaning the same source code always produces the same output—we use Bazel along with Rules OCI. This combination offers several advantages:</p>
-<ul>
-<li>Reproducibility: Regardless of when or where the build occurs, the output will be identical if the source code version remains the same.</li>
-<li>Version Control: Build dependencies are pinned to specific versions, eliminating inconsistencies from upstream package changes.</li>
-<li>Efficiency: Bazel’s caching and precise dependency management speed up rebuilds, especially for minor changes.</li>
-</ul>
-<p>By leveraging Bazel and Rules OCI, we eliminate variables that could affect build outcomes, ensuring reliable results across development, testing, and production environments.</p>
-<hr />
+<p>These dependencies are only used during the build phase and are not included in the final runtime image.</p>
 <h2 id="the-builder-image">The Builder Image</h2>
-<p>The Builder image builds on top of the Build Deps layer. It contains everything required to compile the CMangos server, including:</p>
-<ul>
-<li>Pre-installed Build Deps: All necessary libraries and tools for building the source code.</li>
-<li>Build Scripts and Steps: Automated processes baked into the image to handle compilation.</li>
-<li>Environment Variables: Configurations required during the build process.</li>
-<li>Upstream Source Code: Integrated directly from official repositories for clean, version-controlled builds.</li>
-</ul>
+<p>The Builder image builds on top of the Build Deps image, which will use these dependencies to build the source code bundled within the builder. This means that for a new version of the source code, the builder image <strong>will</strong> change, but the Build Deps image will not.</p>
 <p>The Builder image is solely responsible for the build process. It does not include runtime components, keeping it focused and optimized for its purpose.</p>
-<hr />
 <h2 id="how-it-all-fits-together">How It All Fits Together</h2>
 <ol>
-<li>Build Deps Layer: Provides the foundational dependencies required to build CMangos.</li>
-<li>Builder Image: Utilizes the Build Deps layer to compile the server code and manage build configurations.</li>
-<li>Final Runtime Image: Contains only the compiled binaries and runtime dependencies, optimized for performance and minimal size.</li>
+<li>Build Deps Layer: Provides the tools, libraries &amp; system packages required to build.</li>
+<li>Builder Image: Utilizes the Build Deps layer to compile the server code.</li>
+<li>Final Runtime Image: Contains only the compiled binaries and runtime dependencies.</li>
 </ol>
-<p>This layered architecture allows for greater flexibility, easier updates, and improved security by separating build tools from the final production environment.</p>
-<hr />
-<h2 id="summary">Summary</h2>
-<ul>
-<li>Build Deps manage the critical dependencies required for building CMangos.</li>
-<li>Dependencies are installed using Bazel and Rules OCI for deterministic, reproducible builds.</li>
-<li>The Builder Image leverages Build Deps to execute build steps, manage environment variables, and integrate upstream source code.</li>
-<li>This modular design ensures clean, consistent builds and optimized runtime environments.</li>
-</ul>
 
 
 

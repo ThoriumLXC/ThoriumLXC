@@ -3598,7 +3598,18 @@
 
 <h1 id="runtime-image"><strong>Runtime Image</strong></h1>
 <p>The <strong>Runtime Image</strong> is the final, deployable container that runs the CMangos server. It is designed to be lightweight, secure, and optimized for performance, containing only the essential components needed to run the server.</p>
-<hr />
+<pre class="mermaid"><code>flowchart TD
+    A[Build Deps Image] --&gt; B[Builder Image]
+    B --&gt;|Build Artifacts| D[Final Image]
+    C[Runtime Image] --&gt;|Runtime Dependencies| D
+
+    classDef highlighted stroke-width:2px;
+    classDef faded fill-opacity:0.2,stroke:#000,stroke-width:1px;
+
+    class A faded;
+    class B faded;
+    class C highlighted;
+    class D faded;</code></pre>
 <h2 id="what-is-the-runtime-image"><strong>What is the Runtime Image?</strong></h2>
 <p>The Runtime Image:</p>
 <ul>
