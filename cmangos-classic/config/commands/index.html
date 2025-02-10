@@ -8480,7 +8480,7 @@
 </ul>
 </div>
 <p>Displays a list of all characters for an account either by provided #accountId or $accountName, or the account of a selected player</p>
-<pre><code>.account characters [\#accountId|$accountName]
+<pre><code>.account characters [#accountId|$accountName]
 </code></pre>
 <hr />
 <h2 id="account-set-addon">account set addon</h2>
@@ -8490,7 +8490,7 @@
 </ul>
 </div>
 <p>Set the allowed expansion for a given account ID,username or selected characters account. Allowed values are 0 for vanilla,1 for The Burning Crusade,and 2 for Wrath of the Lich King</p>
-<pre><code>.account set addon [\#accountId|$accountName] \#addon
+<pre><code>.account set addon [#accountId|$accountName] #addon
 </code></pre>
 <hr />
 <h2 id="additem">additem</h2>
@@ -8500,7 +8500,7 @@
 </ul>
 </div>
 <p>Adds the specified number of items of id #itemid (or exact (!) name $itemname in brackets,or link created by shift-click at item in inventory or recipe) to your or selected character inventory. If #itemcount is omitted,only one item will be added.</p>
-<pre><code>.additem \#itemid/[\#itemname]/\#shift-click-item-link \#itemcount
+<pre><code>.additem #itemid/[#itemname]/#shift-click-item-link #itemcount
 </code></pre>
 <hr />
 <h2 id="account-lock">account lock</h2>
@@ -8520,7 +8520,7 @@
 </ul>
 </div>
 <p>Add items from itemset of id #itemsetid to your or selected character inventory. Will add by one example each item from itemset</p>
-<pre><code>.additemset \#itemsetid
+<pre><code>.additemset #itemsetid
 </code></pre>
 <hr />
 <h2 id="account-password">account password</h2>
@@ -8730,7 +8730,7 @@
 </ul>
 </div>
 <p>Add new item (in many stackes if amount grater stack size) to specific auction house at short|long|verylogn perios similar same settings in auction in game dialog. Created auction not have owner</p>
-<pre><code>.auction item (alliance|horde|goblin) \#itemid[:\#itemcount] [[[\#minbid] \#buyout] [short|long|verylong]
+<pre><code>.auction item (alliance|horde|goblin) #itemid[:#itemcount] [[[#minbid] #buyout] [short|long|verylong]
 </code></pre>
 <hr />
 <h2 id="announce">announce</h2>
@@ -8739,8 +8739,8 @@
 <li><span class="twemoji" title="Moderator (1)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M224 0a128 128 0 1 1 0 256 128 128 0 1 1 0-256m-45.7 304h91.4c11.8 0 23.4 1.2 34.5 3.3-2.1 18.5 7.4 35.6 21.8 44.8-16.6 10.6-26.7 31.6-20 53.3 4 12.9 9.4 25.5 16.4 37.6s15.2 23.1 24.4 33c15.7 16.9 39.6 18.4 57.2 8.7v.9c0 9.2 2.7 18.5 7.9 26.3l-382.2.1C13.3 512 0 498.7 0 482.3 0 383.8 79.8 304 178.3 304M436 218.2c0-7 4.5-13.3 11.3-14.8 10.5-2.4 21.5-3.7 32.7-3.7s22.2 1.3 32.7 3.7c6.8 1.5 11.3 7.8 11.3 14.8v30.6c7.9 3.4 15.4 7.7 22.3 12.8l24.9-14.3c6.1-3.5 13.7-2.7 18.5 2.4 7.6 8.1 14.3 17.2 20.1 27.2s10.3 20.4 13.5 31c2.1 6.7-1.1 13.7-7.2 17.2l-25 14.4c.4 4 .7 8.1.7 12.3s-.2 8.2-.7 12.3l25 14.4c6.1 3.5 9.2 10.5 7.2 17.2-3.3 10.6-7.8 21-13.5 31s-12.5 19.1-20.1 27.2c-4.8 5.1-12.5 5.9-18.5 2.4L546.3 442c-6.9 5.1-14.3 9.4-22.3 12.8v30.6c0 7-4.5 13.3-11.3 14.8-10.5 2.4-21.5 3.7-32.7 3.7s-22.2-1.3-32.7-3.7c-6.8-1.5-11.3-7.8-11.3-14.8v-30.5c-8-3.4-15.6-7.7-22.5-12.9l-24.7 14.3c-6.1 3.5-13.7 2.7-18.5-2.4-7.6-8.1-14.3-17.2-20.1-27.2s-10.3-20.4-13.5-31c-2.1-6.7 1.1-13.7 7.2-17.2l24.8-14.3c-.4-4.1-.7-8.2-.7-12.4s.2-8.3.7-12.4L343.8 325c-6.1-3.5-9.2-10.5-7.2-17.2 3.3-10.6 7.7-21 13.5-31s12.5-19.1 20.1-27.2c4.8-5.1 12.4-5.9 18.5-2.4l24.8 14.3c6.9-5.1 14.5-9.4 22.5-12.9v-30.5zm92.1 133.5a48.1 48.1 0 1 0-96.1 0 48.1 48.1 0 1 0 96.1 0"/></svg></span> <em>Moderator Account Level</em></li>
 </ul>
 </div>
-<p>null</p>
-<pre><code>.announce $MessageToBroadcastSend a global message to all players online in chat log
+<p>Send a global message to all players online in chat log</p>
+<pre><code>.announce $MessageToBroadcast
 </code></pre>
 <hr />
 <h2 id="aura">aura</h2>
@@ -8750,7 +8750,7 @@
 </ul>
 </div>
 <p>Add the aura from spell #spellid to the selected Unit</p>
-<pre><code>.aura \#spellid
+<pre><code>.aura #spellid
 </code></pre>
 <hr />
 <h2 id="ban-account">ban account</h2>
@@ -8860,7 +8860,7 @@
 </ul>
 </div>
 <p>Cast #spellid to selected target. If no target selected cast to self. If trigered or part provided then spell casted with triggered flag</p>
-<pre><code>.cast \#spellid [triggered]
+<pre><code>.cast #spellid [triggered]
 </code></pre>
 <hr />
 <h2 id="cast-back">cast back</h2>
@@ -8870,7 +8870,7 @@
 </ul>
 </div>
 <p>Selected target will cast #spellid to your character. If trigered or part provided then spell casted with triggered flag</p>
-<pre><code>.cast back \#spellid [triggered]
+<pre><code>.cast back #spellid [triggered]
 </code></pre>
 <hr />
 <h2 id="cast-dist">cast dist</h2>
@@ -8880,7 +8880,7 @@
 </ul>
 </div>
 <p>You will cast spell to pint at distance #dist. If trigered or part provided then spell casted with triggered flag. Not all spells can be casted as area spells</p>
-<pre><code>.cast dist \#spellid [\#dist [triggered]]
+<pre><code>.cast dist #spellid [#dist [triggered]]
 </code></pre>
 <hr />
 <h2 id="cast-self">cast self</h2>
@@ -8890,7 +8890,7 @@
 </ul>
 </div>
 <p>Cast #spellid by target at target itself. If trigered or part provided then spell casted with triggered flag</p>
-<pre><code>.cast self \#spellid [triggered]
+<pre><code>.cast self #spellid [triggered]
 </code></pre>
 <hr />
 <h2 id="cast-target">cast target</h2>
@@ -8900,7 +8900,7 @@
 </ul>
 </div>
 <p>Selected target will cast #spellid to his victim. If trigered or part provided then spell casted with triggered flag</p>
-<pre><code>.cast target \#spellid [triggered]
+<pre><code>.cast target #spellid [triggered]
 </code></pre>
 <hr />
 <h2 id="character-deleted-list">character deleted list</h2>
@@ -8910,7 +8910,7 @@
 </ul>
 </div>
 <p>Shows a list with all deleted characters. If $name is supplied,only characters with that string in their name will be selected,if #guid is supplied, only the character with that GUID will be selected</p>
-<pre><code>.character deleted list [\#guid|$name]
+<pre><code>.character deleted list [#guid|$name]
 </code></pre>
 <hr />
 <h2 id="character-deleted-restore">character deleted restore</h2>
@@ -8920,7 +8920,7 @@
 </ul>
 </div>
 <p>Restores deleted characters. If $name is supplied,only characters with that string in their name will be restored,if $guid is supplied,only the character with that GUID will be restored. If $newname is set,the character will be restored with that name instead of the original one. If #newaccount is set,the character will be restored to specific account character list. This works only with one character</p>
-<pre><code>.character deleted restore \#guid|$name [$newname] [\#new account]
+<pre><code>.character deleted restore #guid|$name [$newname] [#new account]
 </code></pre>
 <hr />
 <h2 id="character-level">character level</h2>
@@ -8930,7 +8930,7 @@
 </ul>
 </div>
 <p>Set the level of character with $playername (or the selected if not name provided) by #numberoflevels Or +1 if no #numberoflevels provided). If #numberoflevels is omitted,the level will be increase by 1. If #numberoflevels is 0,the same level will be restarted. If no character is selected and name not provided,increase your level. Command can be used for offline character. All stats and dependent values recalculated. At level decrease talents can be reset if need. Also at level decrease equipped items with greater level requirement can be lost</p>
-<pre><code>.character level [$playername] [\#level]
+<pre><code>.character level [$playername] [#level]
 </code></pre>
 <hr />
 <h2 id="cooldown">cooldown</h2>
@@ -8940,7 +8940,7 @@
 </ul>
 </div>
 <p>Remove all (if spell_id not provided) or #spel_id spell cooldown from selected character or you (if no selection)</p>
-<pre><code>.cooldown [\#spell_id]
+<pre><code>.cooldown [#spell_id]
 </code></pre>
 <hr />
 <h2 id="damage">damage</h2>
@@ -8970,7 +8970,7 @@
 </ul>
 </div>
 <p>Get the field #field of the item #itemguid in your inventroy. Use type arg for set output format int (decimal number),hex (hex value),bit (bitstring),float. By default use integer output</p>
-<pre><code>.debug getitemvalue \#itemguid \#field [int|hex|bit|float]
+<pre><code>.debug getitemvalue #itemguid #field [int|hex|bit|float]
 </code></pre>
 <hr />
 <h2 id="debug-getvalue">debug getvalue</h2>
@@ -8980,7 +8980,7 @@
 </ul>
 </div>
 <p>Get the field #field of the selected target. If no target is selected,get the content of your field. Use type arg for set output format int (decimal number),hex (hex value),bit (bitstring),float. By default use integer output</p>
-<pre><code>.debug getvalue \#field [int|hex|bit|float]
+<pre><code>.debug getvalue #field [int|hex|bit|float]
 </code></pre>
 <hr />
 <h2 id="debug-moditemvalue">debug moditemvalue</h2>
@@ -8990,7 +8990,7 @@
 </ul>
 </div>
 <p>Modify the field #field of the item #itemguid in your inventroy by value #value. Use type arg for set mode of modification int (normal add/subtract #value as decimal number),float (add/subtract #value as float number),&amp;= (bit and,set to 0 all bits in value if it not set to 1 in #value as hex number),|= (bit or,set to 1 all bits in value if it set to 1 in #value as hex number),&amp;=~ (bit and not,set to 0 all bits in value if it set to 1 in #value as hex number). By default expect integer add/subtract</p>
-<pre><code>.debug moditemvalue \#guid \#field [int|float| &amp;= | |= | &amp;=~ ] \#value
+<pre><code>.debug moditemvalue #guid #field [int|float| &amp;= | |= | &amp;=~ ] #value
 </code></pre>
 <hr />
 <h2 id="debug-modvalue">debug modvalue</h2>
@@ -9000,7 +9000,7 @@
 </ul>
 </div>
 <p>Modify the field #field of the selected target by value #value. If no target is selected,set the content of your field. Use type arg for set mode of modification int (normal add/subtract #value as decimal number),float (add/subtract #value as float number),&amp;= (bit and,set to 0 all bits in value if it not set to 1 in #value as hex number),|= (bit or,set to 1 all bits in value if it set to 1 in #value as hex number),&amp;=~ (bit and not,set to 0 all bits in value if it set to 1 in #value as hex number). By default expect integer add/subtract</p>
-<pre><code>.debug modvalue \#field [int|float| &amp;= | |= | &amp;=~ ] \#value
+<pre><code>.debug modvalue #field [int|float| &amp;= | |= | &amp;=~ ] #value
 </code></pre>
 <hr />
 <h2 id="debug-setitemvalue">debug setitemvalue</h2>
@@ -9010,7 +9010,7 @@
 </ul>
 </div>
 <p>Set the field #field of the item #itemguid in your inventroy to value #value. Use type arg for set input format int (decimal number),hex (hex value),bit (bitstring),float. By default expect integer input format</p>
-<pre><code>.debug setitemvalue \#guid \#field [int|hex|bit|float] \#value
+<pre><code>.debug setitemvalue #guid #field [int|hex|bit|float] #value
 </code></pre>
 <hr />
 <h2 id="character-rename">character rename</h2>
@@ -9060,7 +9060,7 @@
 </ul>
 </div>
 <p>Set the field #field of the selected target to value #value. If no target is selected,set the content of your field. Use type arg for set input format int (decimal number),hex (hex value),bit (bitstring),float. By default expect integer input format</p>
-<pre><code>.debug setvalue \#field [int|hex|bit|float] \#value
+<pre><code>.debug setvalue #field [int|hex|bit|float] #value
 </code></pre>
 <hr />
 <h2 id="debug-spellcoefs">debug spellcoefs</h2>
@@ -9070,7 +9070,7 @@
 </ul>
 </div>
 <p>Show default calculated and DB stored coefficients for direct/dot heal/damage</p>
-<pre><code>.debug spellcoefs \#spellid
+<pre><code>.debug spellcoefs #spellid
 </code></pre>
 <hr />
 <h2 id="debug-anim">debug anim</h2>
@@ -9080,7 +9080,7 @@
 </ul>
 </div>
 <p>Play emote #emoteid for your character</p>
-<pre><code>.debug anim \#emoteid
+<pre><code>.debug anim #emoteid
 </code></pre>
 <hr />
 <h2 id="debug-spellmods">debug spellmods</h2>
@@ -9090,7 +9090,7 @@
 </ul>
 </div>
 <p>Set at client side spellmod affect for spell that have bit set with index #spellMaskBitIndex in spell family mask for values dependent from spellmod #spellModOp to #value</p>
-<pre><code>.debug spellmods (flat|pct) \#spellMaskBitIndex \#spellModOp \#value
+<pre><code>.debug spellmods (flat|pct) #spellMaskBitIndex #spellModOp #value
 </code></pre>
 <hr />
 <h2 id="die">die</h2>
@@ -9120,7 +9120,7 @@
 </ul>
 </div>
 <p>Reveal  or hide all maps for the selected player. If no player is selected,hide or reveal maps to you.Use a #flag of value 1 to reveal,use a #flag value of 0 to hide all maps</p>
-<pre><code>.explorecheat \#flag
+<pre><code>.explorecheat #flag
 </code></pre>
 <hr />
 <h2 id="gm-fly">gm fly</h2>
@@ -9140,7 +9140,7 @@
 </ul>
 </div>
 <p>Play cinematic #cinematicid for you. You stay at place while your mind fly</p>
-<pre><code>.debug play cinematic \#cinematicid
+<pre><code>.debug play cinematic #cinematicid
 </code></pre>
 <hr />
 <h2 id="debug-play-sound">debug play sound</h2>
@@ -9150,7 +9150,7 @@
 </ul>
 </div>
 <p>Play sound with #soundid.Sound will be play only for you. Other players do not hear this.Warning client may have more 5000 sounds.</p>
-<pre><code>.debug play sound \#soundid
+<pre><code>.debug play sound #soundid
 </code></pre>
 <hr />
 <h2 id="gm-list">gm list</h2>
@@ -9170,7 +9170,7 @@
 </ul>
 </div>
 <p>Hide the area of #areaid to the selected character. If no character is selected,hide this area to you</p>
-<pre><code>.hidearea \#areaid
+<pre><code>.hidearea #areaid
 </code></pre>
 <hr />
 <h2 id="instance-listbinds">instance listbinds</h2>
@@ -9200,7 +9200,7 @@
 </ul>
 </div>
 <p>Delete a ticket. If all, then delete all, otherwise lookup by number or character name</p>
-<pre><code>.delticket [all,\#num,$character_name]
+<pre><code>.delticket [all,#num,$character_name]
 </code></pre>
 <hr />
 <h2 id="demorph">demorph</h2>
@@ -9250,7 +9250,7 @@
 </ul>
 </div>
 <p>Show details about event with #event_id</p>
-<pre><code>.event \#event_id
+<pre><code>.event #event_id
 </code></pre>
 <hr />
 <h2 id="event-list">event list</h2>
@@ -9270,7 +9270,7 @@
 </ul>
 </div>
 <p>Start event #event_id. Set start time for event to current moment (change not saved in DB)</p>
-<pre><code>.event start \#event_id
+<pre><code>.event start #event_id
 </code></pre>
 <hr />
 <h2 id="event-stop">event stop</h2>
@@ -9280,7 +9280,7 @@
 </ul>
 </div>
 <p>Stop event #event_id. Set start time for event to time in past that make current moment is event stop time (change not saved in DB)</p>
-<pre><code>.event stop \#event_id
+<pre><code>.event stop #event_id
 </code></pre>
 <hr />
 <h2 id="learn">learn</h2>
@@ -9290,7 +9290,7 @@
 </ul>
 </div>
 <p>Selected character learn a spell of id #spell. If all provided then all ranks learned</p>
-<pre><code>.learn \#spell [all]
+<pre><code>.learn #spell [all]
 </code></pre>
 <hr />
 <h2 id="gm">gm</h2>
@@ -9370,7 +9370,7 @@
 </ul>
 </div>
 <p>Teleport your character to point with coordinates of player $playername,or coordinates of one from shift-link types player,tele,taxinode,creature/creature_entry,gameobject/gameobject_entry,or explicit #x #y #z #mapid coordinates</p>
-<pre><code>.go [$playername|pointlink|\#x \#y \#z [\#mapid]]
+<pre><code>.go [$playername|pointlink|#x #y #z [#mapid]]
 </code></pre>
 <hr />
 <h2 id="go-creature">go creature</h2>
@@ -9380,7 +9380,7 @@
 </ul>
 </div>
 <p>Teleport your character to creature with guid #creature_guid,or teleport your character to creature with name including as part $creature_name substring,or teleport your character to a creature that was spawned from the template with this entry #creature_id</p>
-<pre><code>.go creature (\#creature_guid|$creature_name|id \#creature_id)
+<pre><code>.go creature (#creature_guid|$creature_name|id #creature_id)
 </code></pre>
 <hr />
 <h2 id="go-graveyard">go graveyard</h2>
@@ -9390,7 +9390,7 @@
 </ul>
 </div>
 <p>Teleport to graveyard with the graveyardId specified</p>
-<pre><code>.go graveyard \#graveyardId
+<pre><code>.go graveyard #graveyardId
 </code></pre>
 <hr />
 <h2 id="go-grid">go grid</h2>
@@ -9400,7 +9400,7 @@
 </ul>
 </div>
 <p>Teleport the gm to center of grid with provided indexes at map #mapId (or current map if it not provided)</p>
-<pre><code>.go grid \#gridX \#gridY [\#mapId]
+<pre><code>.go grid #gridX #gridY [#mapId]
 </code></pre>
 <hr />
 <h2 id="go-object">go object</h2>
@@ -9410,7 +9410,7 @@
 </ul>
 </div>
 <p>Teleport your character to gameobject with guid #gameobject_guid,or teleport your character to gameobject with name including as part $gameobject_name substring,or teleport your character to a gameobject that was spawned from the template with this entry #gameobject_id</p>
-<pre><code>.go object (\#gameobject_guid|$gameobject_name|id \#gameobject_id)
+<pre><code>.go object (#gameobject_guid|$gameobject_name|id #gameobject_id)
 </code></pre>
 <hr />
 <h2 id="go-taxinode">go taxinode</h2>
@@ -9420,7 +9420,7 @@
 </ul>
 </div>
 <p>Teleport player to taxinode coordinates. You can look up zone using .lookup taxinode $namepar</p>
-<pre><code>.go taxinode \#taxinode
+<pre><code>.go taxinode #taxinode
 </code></pre>
 <hr />
 <h2 id="go-trigger">go trigger</h2>
@@ -9430,7 +9430,7 @@
 </ul>
 </div>
 <p>Teleport your character to areatrigger with id #trigger_id or trigger id associated with shift-link. If additional arg <em>target</em> provided then character will teleported to areatrigger target point</p>
-<pre><code>.go trigger (\#trigger_id|$trigger_shift-link|$trigger_target_shift-link) [target]
+<pre><code>.go trigger (#trigger_id|$trigger_shift-link|$trigger_target_shift-link) [target]
 </code></pre>
 <hr />
 <h2 id="go-xy">go xy</h2>
@@ -9440,7 +9440,7 @@
 </ul>
 </div>
 <p>Teleport player to point with (#x,#y) coordinates at ground(water) level at map #mapid or same map if #mapid not provided</p>
-<pre><code>.go xy \#x \#y [\#mapid]
+<pre><code>.go xy #x #y [#mapid]
 </code></pre>
 <hr />
 <h2 id="go-xyz">go xyz</h2>
@@ -9450,7 +9450,7 @@
 </ul>
 </div>
 <p>Teleport player to point with (#x,#y,#z) coordinates at ground(water) level at map #mapid or same map if #mapid not provided</p>
-<pre><code>.go xyz \#x \#y \#z [\#mapid]
+<pre><code>.go xyz #x #y #z [#mapid]
 </code></pre>
 <hr />
 <h2 id="go-zonexy">go zonexy</h2>
@@ -9460,7 +9460,7 @@
 </ul>
 </div>
 <p>Teleport player to point with (#x,#y) client coordinates at ground(water) level in zone #zoneid or current zone if #zoneid not provided. You can look up zone using .lookup area $namepar</p>
-<pre><code>.go zonexy \#x \#y [\#zone]
+<pre><code>.go zonexy #x #y [#zone]
 </code></pre>
 <hr />
 <h2 id="gobject-add">gobject add</h2>
@@ -9470,7 +9470,7 @@
 </ul>
 </div>
 <p>Add a game object from game object templates to the world at your current location using the #id.spawntimesecs sets the spawntime,it is optional. Note this is a copy of .gameobject</p>
-<pre><code>.gobject add \#id &lt;spawntimeSecs&gt;
+<pre><code>.gobject add #id &lt;spawntimeSecs&gt;
 </code></pre>
 <hr />
 <h2 id="gobject-delete">gobject delete</h2>
@@ -9480,7 +9480,7 @@
 </ul>
 </div>
 <p>Delete gameobject with guid #go_guid</p>
-<pre><code>.gobject delete \#go_guid
+<pre><code>.gobject delete #go_guid
 </code></pre>
 <hr />
 <h2 id="gobject-move">gobject move</h2>
@@ -9490,7 +9490,7 @@
 </ul>
 </div>
 <p>Move gameobject #goguid to character coordinates (or to (#x,#y,#z) coordinates if its provide)</p>
-<pre><code>.gobject move \#goguid [\#x \#y \#z]
+<pre><code>.gobject move #goguid [#x #y #z]
 </code></pre>
 <hr />
 <h2 id="gobject-near">gobject near</h2>
@@ -9500,7 +9500,7 @@
 </ul>
 </div>
 <p>Output gameobjects at distance #distance from player. Output gameobject guids and coordinates sorted by distance from character. If #distance not provided use 10 as default value</p>
-<pre><code>.gobject near  [\#distance]
+<pre><code>.gobject near  [#distance]
 </code></pre>
 <hr />
 <h2 id="gobject-target">gobject target</h2>
@@ -9510,7 +9510,7 @@
 </ul>
 </div>
 <p>Locate and show position nearest gameobject. If #go_id or #go_name_part provide then locate and show position of nearest gameobject with gameobject template id #go_id or name included #go_name_part as part</p>
-<pre><code>.gobject target [\#go_id|\#go_name_part]
+<pre><code>.gobject target [#go_id|#go_name_part]
 </code></pre>
 <hr />
 <h2 id="gobject-turn">gobject turn</h2>
@@ -9520,7 +9520,7 @@
 </ul>
 </div>
 <p>Set for gameobject #goguid orientation same as current character orientation</p>
-<pre><code>.gobject turn \#goguid
+<pre><code>.gobject turn #goguid
 </code></pre>
 <hr />
 <h2 id="goname">goname</h2>
@@ -9600,7 +9600,7 @@
 </ul>
 </div>
 <p>Set for $CharacterName rank #Rank in a guild</p>
-<pre><code>.guild rank $CharacterName \#Rank
+<pre><code>.guild rank $CharacterName #Rank
 </code></pre>
 <hr />
 <h2 id="guild-uninvite">guild uninvite</h2>
@@ -9690,7 +9690,7 @@
 </ul>
 </div>
 <p>Increase/decrease the level of character with $playername (or the selected if not name provided) by #numberoflevels Or +1 if no #numberoflevels provided). If #numberoflevels is omitted,the level will be increase by 1. If #numberoflevels is 0,the same level will be restarted. If no character is selected and name not provided,increase your level. Command can be used for offline character. All stats and dependent VALUESrecalculated. At level decrease talents can be reset if need. Also at level decrease equipped items with greater level requirement can be lost</p>
-<pre><code>.levelup [$playername] [\#numberoflevels]
+<pre><code>.levelup [$playername] [#numberoflevels]
 </code></pre>
 <hr />
 <h2 id="linkgrave">linkgrave</h2>
@@ -9700,7 +9700,7 @@
 </ul>
 </div>
 <p>Link current zone to graveyard for any (or alliance/horde faction ghosts). This let character ghost from zone teleport to graveyard after die if graveyard is nearest from linked to zone and accept ghost of this faction. Add only single graveyard at another map and only if no graveyards linked (or planned linked at same map)</p>
-<pre><code>.linkgrave \#graveyard_id [alliance|horde]
+<pre><code>.linkgrave #graveyard_id [alliance|horde]
 </code></pre>
 <hr />
 <h2 id="list-creature">list creature</h2>
@@ -9710,7 +9710,7 @@
 </ul>
 </div>
 <p>Output creatures with creature id #creature_id found in world. Output creature guids and coordinates sorted by distance from character. Will be output maximum #max_count creatures. If #max_count not provided use 10 as default value</p>
-<pre><code>.list creature \#creature_id [\#max_count]
+<pre><code>.list creature #creature_id [#max_count]
 </code></pre>
 <hr />
 <h2 id="itemmove">itemmove</h2>
@@ -9720,7 +9720,7 @@
 </ul>
 </div>
 <p>Move an item from slots #sourceslotid to #destinationslotid in your inventoryNot yet implemente</p>
-<pre><code>.itemmove \#sourceslotid \#destinationslotid
+<pre><code>.itemmove #sourceslotid #destinationslotid
 </code></pre>
 <hr />
 <h2 id="kick">kick</h2>
@@ -9740,7 +9740,7 @@
 </ul>
 </div>
 <p>Output items with item id #item_id found in all character inventories,mails,auctions,and guild banks. Output item guids,item owner guid,owner account and owner name (guild name and guid in case guild bank). Will be output maximum #max_count items. If #max_count not provided use 10 as default value</p>
-<pre><code>.list item \#item_id [\#max_count]
+<pre><code>.list item #item_id [#max_count]
 </code></pre>
 <hr />
 <h2 id="list-object">list object</h2>
@@ -9750,7 +9750,7 @@
 </ul>
 </div>
 <p>Output gameobjects with gameobject id #gameobject_id found in world. Output gameobject guids and coordinates sorted by distance from character. Will be output maximum #max_count gameobject. If #max_count not provided use 10 as default value</p>
-<pre><code>.list object \#gameobject_id [\#max_count]
+<pre><code>.list object #gameobject_id [#max_count]
 </code></pre>
 <hr />
 <h2 id="learn-all_crafts">learn all_crafts</h2>
@@ -9910,7 +9910,7 @@
 </ul>
 </div>
 <p>Searchs accounts,w hich email including $emailpart with optional parametr #limit of results. If #limit not provided expected 100</p>
-<pre><code>.lookup account email $emailpart [\#limit]
+<pre><code>.lookup account email $emailpart [#limit]
 </code></pre>
 <hr />
 <h2 id="lookup-account-ip">lookup account ip</h2>
@@ -9920,7 +9920,7 @@
 </ul>
 </div>
 <p>Searchs accounts,which last used ip inluding $ippart (textual) with optional parametr #$limit of results. If #limit not provided expected 100</p>
-<pre><code>lookup account ip $ippart [\#limit]
+<pre><code>lookup account ip $ippart [#limit]
 </code></pre>
 <hr />
 <h2 id="lookup-account-name">lookup account name</h2>
@@ -9930,7 +9930,7 @@
 </ul>
 </div>
 <p>Searchs accounts,which username including $accountpart with optional parametr #limit of results. If #limit not provided expected 100</p>
-<pre><code>.lookup account name $accountpart [\#limit]
+<pre><code>.lookup account name $accountpart [#limit]
 </code></pre>
 <hr />
 <h2 id="lookup-area">lookup area</h2>
@@ -10010,7 +10010,7 @@
 </ul>
 </div>
 <p>Searchs players,which account username including $accountpart with optional parametr #limit of results. If #limit not provided expected 100</p>
-<pre><code>.lookup player account $accountpart [\#limit]
+<pre><code>.lookup player account $accountpart [#limit]
 </code></pre>
 <hr />
 <h2 id="lookup-player-email">lookup player email</h2>
@@ -10020,7 +10020,7 @@
 </ul>
 </div>
 <p>Searchs players,which account email including $emailpart with optional parametr #limit of results. If #limit not provided expected 100</p>
-<pre><code>.lookup player email $emailpart [\#limit]
+<pre><code>.lookup player email $emailpart [#limit]
 </code></pre>
 <hr />
 <h2 id="lookup-player-ip">lookup player ip</h2>
@@ -10030,7 +10030,7 @@
 </ul>
 </div>
 <p>Searchs players,which account last used ip inluding $ippart (textual) with optional parametr #limit of results. If #limit not provided expected 100</p>
-<pre><code>.lookup player ip $ippart [\#limit]
+<pre><code>.lookup player ip $ippart [#limit]
 </code></pre>
 <hr />
 <h2 id="lookup-pool">lookup pool</h2>
@@ -10070,7 +10070,7 @@
 </ul>
 </div>
 <p>Make the selected creature emote with an emote of id #emoteid</p>
-<pre><code>.npc playemote \#emoteid
+<pre><code>.npc playemote #emoteid
 </code></pre>
 <hr />
 <h2 id="pdump-load">pdump load</h2>
@@ -10110,7 +10110,7 @@
 </ul>
 </div>
 <p>Modify all speeds -run,swim,run back,"swim back- of the selected player to \normalbase speed for this move type__*rate. If no player is selected","modify your speed. #rate may range from 0.1 to 10._'"</p>
-<pre><code>.modify aspeed \#rate
+<pre><code>.modify aspeed #rate
 </code></pre>
 <hr />
 <h2 id="modify-bwalk">modify bwalk</h2>
@@ -10120,7 +10120,7 @@
 </ul>
 </div>
 <p>Modify the speed of the selected player while running backwards to \normal walk back speed__*rate. If no player is selected","modify your speed. #rate may range from 0.1 to 10._'"</p>
-<pre><code>.modify bwalk \#rate
+<pre><code>.modify bwalk #rate
 </code></pre>
 <hr />
 <h2 id="modify-drunk">modify drunk</h2>
@@ -10130,7 +10130,7 @@
 </ul>
 </div>
 <p>Set drunk level to #value (0..100). Value 0 remove drunk state,100 is max drunked state</p>
-<pre><code>.modify drunk \#value
+<pre><code>.modify drunk #value
 </code></pre>
 <hr />
 <h2 id="modify-energy">modify energy</h2>
@@ -10140,7 +10140,7 @@
 </ul>
 </div>
 <p>Modify the energy of the selected player. If no player is selected,modify your energy</p>
-<pre><code>.modify energy \#energy
+<pre><code>.modify energy #energy
 </code></pre>
 <hr />
 <h2 id="modify-faction">modify faction</h2>
@@ -10150,7 +10150,7 @@
 </ul>
 </div>
 <p>Modify the faction and flags of the selected creature. Without arguments,display the faction and flags of the selected creature</p>
-<pre><code>.modify faction \#factionid \#flagid \#npcflagid \#dynamicflagid
+<pre><code>.modify faction #factionid #flagid #npcflagid #dynamicflagid
 </code></pre>
 <hr />
 <h2 id="modify-gender">modify gender</h2>
@@ -10180,7 +10180,7 @@
 </ul>
 </div>
 <p>Modify the hp of the selected player. If no player is selected,modify your hp</p>
-<pre><code>.modify hp \#newhp
+<pre><code>.modify hp #newhp
 </code></pre>
 <hr />
 <h2 id="modify-mana">modify mana</h2>
@@ -10190,7 +10190,7 @@
 </ul>
 </div>
 <p>Modify the mana of the selected player. If no player is selected,modify your mana</p>
-<pre><code>.modify mana \#newmana
+<pre><code>.modify mana #newmana
 </code></pre>
 <hr />
 <h2 id="modify-money">modify money</h2>
@@ -10200,7 +10200,7 @@
 </ul>
 </div>
 <p>Add or remove money to the selected player. If no player is selected,modify your money. #gold can be negative to remove money</p>
-<pre><code>.modify money \#money.money \#money
+<pre><code>.modify money #money.money #money
 </code></pre>
 <hr />
 <h2 id="modify-morph">modify morph</h2>
@@ -10210,7 +10210,7 @@
 </ul>
 </div>
 <p>Change your current model id to #displayid</p>
-<pre><code>.modify morph \#displayid
+<pre><code>.modify morph #displayid
 </code></pre>
 <hr />
 <h2 id="modify-mount">modify mount</h2>
@@ -10220,7 +10220,7 @@
 </ul>
 </div>
 <p>Display selected player as mounted at #id creature and set speed to #speed value</p>
-<pre><code>.modify mount \#id \#speed
+<pre><code>.modify mount #id #speed
 </code></pre>
 <hr />
 <h2 id="modify-rage">modify rage</h2>
@@ -10230,7 +10230,7 @@
 </ul>
 </div>
 <p>Modify the rage of the selected player. If no player is selected,modify your rage</p>
-<pre><code>.modify rage \#newrage
+<pre><code>.modify rage #newrage
 </code></pre>
 <hr />
 <h2 id="modify-rep">modify rep</h2>
@@ -10240,7 +10240,7 @@
 </ul>
 </div>
 <p>Sets the selected players reputation with faction #repId to #repvalue or to $reprank.If the reputation rank name is provided,the resulting reputation will be the lowest reputation for that rank plus the delta amount,if specified.You can use .pinfo rep to list all known reputation ids,or use .lookup faction $name to locate a specific faction id</p>
-<pre><code>.modify rep \#repId (\#repvalue | $rankname [\#delta])
+<pre><code>.modify rep #repId (#repvalue | $rankname [#delta])
 </code></pre>
 <hr />
 <h2 id="modify-scale">modify scale</h2>
@@ -10250,7 +10250,7 @@
 </ul>
 </div>
 <p>Change model scale for targeted player (util relogin) or creature (until respawn)</p>
-<pre><code>.modify scale \#scale
+<pre><code>.modify scale #scale
 </code></pre>
 <hr />
 <h2 id="modify-speed">modify speed</h2>
@@ -10260,7 +10260,7 @@
 </ul>
 </div>
 <p>Modify the running speed of the selected player to \normal base run speed__*rate. If no player is selected","modify your speed. #rate may range from 0.1 to 10._'"</p>
-<pre><code>.modify speed \#rate.speed \#rate
+<pre><code>.modify speed #rate.speed #rate
 </code></pre>
 <hr />
 <h2 id="modify-standstate">modify standstate</h2>
@@ -10270,7 +10270,7 @@
 </ul>
 </div>
 <p>Change the emote of your character while standing to #emoteid</p>
-<pre><code>.modify standstate \#emoteid
+<pre><code>.modify standstate #emoteid
 </code></pre>
 <hr />
 <h2 id="modify-swim">modify swim</h2>
@@ -10280,7 +10280,7 @@
 </ul>
 </div>
 <p>Modify the swim speed of the selected player to \normal swim speed__*rate. If no player is selected","modify your speed. #rate may range from 0.1 to 10._'"</p>
-<pre><code>.modify swim \#rate
+<pre><code>.modify swim #rate
 </code></pre>
 <hr />
 <h2 id="quest-add">quest add</h2>
@@ -10290,7 +10290,7 @@
 </ul>
 </div>
 <p>Add to character quest log quest #quest_id. Quest started from item cant be added by this command but correct .additem call provided in command output</p>
-<pre><code>.quest add \#quest_id
+<pre><code>.quest add #quest_id
 </code></pre>
 <hr />
 <h2 id="mute">mute</h2>
@@ -10320,7 +10320,7 @@
 </ul>
 </div>
 <p>Mark all quest objectives as completed for target character active quest. After this target character can go and get quest reward</p>
-<pre><code>.quest complete \#questid
+<pre><code>.quest complete #questid
 </code></pre>
 <hr />
 <h2 id="notify">notify</h2>
@@ -10340,7 +10340,7 @@
 </ul>
 </div>
 <p>Spawn a creature by the given template id of #creatureid</p>
-<pre><code>.npc add \#creatureid
+<pre><code>.npc add #creatureid
 </code></pre>
 <hr />
 <h2 id="npc-additem">npc additem</h2>
@@ -10350,7 +10350,7 @@
 </ul>
 </div>
 <p>Add item #itemid to item list of selected vendor. Also optionally set max count item in vendor item list and time to item count restoring</p>
-<pre><code>.npc additem \#itemId &lt;\#maxcount&gt;&lt;\#incrtime&gt;
+<pre><code>.npc additem #itemId &lt;#maxcount&gt;&lt;#incrtime&gt;
 </code></pre>
 <hr />
 <h2 id="quest-remove">quest remove</h2>
@@ -10360,7 +10360,7 @@
 </ul>
 </div>
 <p>Set quest #quest_id state to not completed and not active (and remove from active quest list) for selected player</p>
-<pre><code>.quest remove \#quest_id
+<pre><code>.quest remove #quest_id
 </code></pre>
 <hr />
 <h2 id="npc-aiinfo">npc aiinfo</h2>
@@ -10390,7 +10390,7 @@
 </ul>
 </div>
 <p>Change the level of the selected creature to #level.#level may range from 1 to 63</p>
-<pre><code>.npc changelevel \#level
+<pre><code>.npc changelevel #level
 </code></pre>
 <hr />
 <h2 id="npc-delete">npc delete</h2>
@@ -10400,7 +10400,7 @@
 </ul>
 </div>
 <p>Delete creature with guid #guid (or the selected if no guid is provided</p>
-<pre><code>.npc delete [\#guid]
+<pre><code>.npc delete [#guid]
 </code></pre>
 <hr />
 <h2 id="npc-delitem">npc delitem</h2>
@@ -10410,7 +10410,7 @@
 </ul>
 </div>
 <p>Remove item #itemid from item list of selected vendor</p>
-<pre><code>.npc delitem \#itemId
+<pre><code>.npc delitem #itemId
 </code></pre>
 <hr />
 <h2 id="npc-factionid">npc factionid</h2>
@@ -10420,7 +10420,7 @@
 </ul>
 </div>
 <p>Set the faction of the selected creature to #factionid</p>
-<pre><code>.npc factionid \#factionid
+<pre><code>.npc factionid #factionid
 </code></pre>
 <hr />
 <h2 id="npc-flag">npc flag</h2>
@@ -10430,7 +10430,7 @@
 </ul>
 </div>
 <p>Set the NPC flags of creature template of the selected creature and selected creature to #npcflag. NPC flags will applied to all creatures of selected creature template after server restart or grid unload/load</p>
-<pre><code>.npc flag \#npcflag
+<pre><code>.npc flag #npcflag
 </code></pre>
 <hr />
 <h2 id="npc-follow">npc follow</h2>
@@ -10460,7 +10460,7 @@
 </ul>
 </div>
 <p>Move the targeted creature spawn point to your coordinates</p>
-<pre><code>.npc move [\#creature_guid]
+<pre><code>.npc move [#creature_guid]
 </code></pre>
 <hr />
 <h2 id="npc-name">npc name</h2>
@@ -10490,7 +10490,7 @@
 </ul>
 </div>
 <p>Make the selected npc says #text</p>
-<pre><code>.npc say \#text
+<pre><code>.npc say #text
 </code></pre>
 <hr />
 <h2 id="npc-setdeathstate">npc setdeathstate</h2>
@@ -10510,7 +10510,7 @@
 </ul>
 </div>
 <p>Change the model id of the selected creature to #displayid</p>
-<pre><code>.npc setmodel \#displayid
+<pre><code>.npc setmodel #displayid
 </code></pre>
 <hr />
 <h2 id="npc-setmovetype">npc setmovetype</h2>
@@ -10520,7 +10520,7 @@
 </ul>
 </div>
 <p>Set for creature pointed by #creature_guid (or selected if #creature_guid not provided) movement type and move it to respawn position (if creature alive). Any existing waypoints for creature will be removed from the database if you do not use NODEL. If the creature is dead then movement type will applied at creature respawn.Make sure you use NODEL,if you want to keep the waypoints</p>
-<pre><code>.npc setmovetype [\#creature_guid] stay/random/way [NODEL]
+<pre><code>.npc setmovetype [#creature_guid] stay/random/way [NODEL]
 </code></pre>
 <hr />
 <h2 id="npc-spawndist">npc spawndist</h2>
@@ -10530,7 +10530,7 @@
 </ul>
 </div>
 <p>Adjust spawndistance of selected creature to dist</p>
-<pre><code>.npc spawndist \#dist
+<pre><code>.npc spawndist #dist
 </code></pre>
 <hr />
 <h2 id="npc-spawntime">npc spawntime</h2>
@@ -10540,7 +10540,7 @@
 </ul>
 </div>
 <p>Adjust spawntime of selected creature to time</p>
-<pre><code>.npc spawntime \#time
+<pre><code>.npc spawntime #time
 </code></pre>
 <hr />
 <h2 id="npc-subname">npc subname</h2>
@@ -10570,7 +10570,7 @@
 </ul>
 </div>
 <p>Make the selected creature to do textemote with an emote of id #emoteid</p>
-<pre><code>.npc textemote \#emoteid
+<pre><code>.npc textemote #emoteid
 </code></pre>
 <hr />
 <h2 id="npc-unfollow">npc unfollow</h2>
@@ -10590,7 +10590,7 @@
 </ul>
 </div>
 <p>Make the selected npc whisper #text to  #playerguid</p>
-<pre><code>.npc whisper \#playerguid \#text
+<pre><code>.npc whisper #playerguid #text
 </code></pre>
 <hr />
 <h2 id="npc-yell">npc yell</h2>
@@ -10600,7 +10600,7 @@
 </ul>
 </div>
 <p>Make the selected npc yells #text</p>
-<pre><code>.npc yell \#text
+<pre><code>.npc yell #text
 </code></pre>
 <hr />
 <h2 id="reload-all_item">reload all_item</h2>
@@ -10640,7 +10640,7 @@
 </ul>
 </div>
 <p>Pool information and full list creatures/gameobjects included in pool</p>
-<pre><code>.pool \#pool_id
+<pre><code>.pool #pool_id
 </code></pre>
 <hr />
 <h2 id="pool-list">pool list</h2>
@@ -10660,7 +10660,7 @@
 </ul>
 </div>
 <p>List current creatures/objects listed in pools (or in specific #pool_id) and spawned (added to grid data,not meaning show in world</p>
-<pre><code>.pool spawns \#pool_id
+<pre><code>.pool spawns #pool_id
 </code></pre>
 <hr />
 <h2 id="reload-all_loot">reload all_loot</h2>
@@ -10820,7 +10820,7 @@
 </ul>
 </div>
 <p>Send a mail to a player. Subject and mail text must be in ____. If for itemid not provided related count values then expected 1","if count &gt; max items in stack then items will be send in required amount stacks. All stacks amount in mail limited to 12._'"</p>
-<pre><code>.send items \#playername \#subject__ __\#text__ itemid1[:count1] itemid2[:count2] ... itemidN[:countN]
+<pre><code>.send items #playername #subject__ __#text__ itemid1[:count1] itemid2[:count2] ... itemidN[:countN]
 </code></pre>
 <hr />
 <h2 id="repairitems">repairitems</h2>
@@ -10840,7 +10840,7 @@
 </ul>
 </div>
 <p>Send a mail to players. Subject and mail text must be in __. If for itemid not provided related count values then expected 1",if count &gt; max items in stack then items will be send in required amount stacks. All stacks amount in mail limited to 12</p>
-<pre><code>.send mass items \#racemask|$racename|alliance|horde|all _\#subject_ _\#text_ itemid1[:count1] itemid2[:count2] ... itemidN[:countN]
+<pre><code>.send mass items #racemask|$racename|alliance|horde|all _#subject_ _#text_ itemid1[:count1] itemid2[:count2] ... itemidN[:countN]
 </code></pre>
 <hr />
 <h2 id="send-mass-mail">send mass mail</h2>
@@ -10850,7 +10850,7 @@
 </ul>
 </div>
 <p>Send a mail to players. Subject and mail text must be in __</p>
-<pre><code>.send mass mail \#racemask|$racename|alliance|horde|all _\#subject_ _\#text_
+<pre><code>.send mass mail #racemask|$racename|alliance|horde|all _#subject_ _#text_
 </code></pre>
 <hr />
 <h2 id="send-mass-money">send mass money</h2>
@@ -10860,7 +10860,7 @@
 </ul>
 </div>
 <p>Send mail with money to players. Subject and mail text must be in __</p>
-<pre><code>.send mass money \#racemask|$racename|alliance|horde|all _\#subject_ _\#text_ \#money
+<pre><code>.send mass money #racemask|$racename|alliance|horde|all _#subject_ _#text_ #money
 </code></pre>
 <hr />
 <h2 id="send-message">send message</h2>
@@ -10880,7 +10880,7 @@
 </ul>
 </div>
 <p>Send mail with money to a player. Subject and mail text must be in ____._'"</p>
-<pre><code>.send money \#playername \#subject__ __\#text__ \#money
+<pre><code>.send money #playername #subject__ __#text__ #money
 </code></pre>
 <hr />
 <h2 id="server-idlerestart">server idlerestart</h2>
@@ -10890,7 +10890,7 @@
 </ul>
 </div>
 <p>Restart the server after #delay seconds if no active connections are present (no players). Use #exist_code or 2 as program exist code</p>
-<pre><code>.server idlerestart \#delay
+<pre><code>.server idlerestart #delay
 </code></pre>
 <hr />
 <h2 id="server-idlerestart-cancel">server idlerestart cancel</h2>
@@ -10910,7 +10910,7 @@
 </ul>
 </div>
 <p>Shut the server down after #delay seconds if no active connections are present (no players). Use #exist_code or 0 as program exist code</p>
-<pre><code>.server idleshutdown \#delay [\#exist_code]
+<pre><code>.server idleshutdown #delay [#exist_code]
 </code></pre>
 <hr />
 <h2 id="save">save</h2>
@@ -10950,7 +10950,7 @@
 </ul>
 </div>
 <p>Send a mail to a player. Subject and mail text must be in quotations.</p>
-<pre><code>.send mail \#playername \#subject__ __\#text__
+<pre><code>.send mail #playername #subject__ __#text__
 </code></pre>
 <hr />
 <h2 id="server-plimit">server plimit</h2>
@@ -10960,7 +10960,7 @@
 </ul>
 </div>
 <p>Without arg show current player amount and security level limitations for login to server,with arg set player linit ($num &gt; 0) or securiti limitation ($num &lt; 0 or security leme name. With <code>reset</code> sets player limit to the one in the config fil</p>
-<pre><code>.server plimit [\#num|-1|-2|-3|reset|player|moderator|gamemaster|administrator]
+<pre><code>.server plimit [#num|-1|-2|-3|reset|player|moderator|gamemaster|administrator]
 </code></pre>
 <hr />
 <h2 id="server-restart">server restart</h2>
@@ -10970,7 +10970,7 @@
 </ul>
 </div>
 <p>Restart the server after #delay seconds. Use #exist_code or 2 as program exist code</p>
-<pre><code>.server restart \#delay
+<pre><code>.server restart #delay
 </code></pre>
 <hr />
 <h2 id="server-restart-cancel">server restart cancel</h2>
@@ -11000,7 +11000,7 @@
 </ul>
 </div>
 <p>Shut the server down after #delay seconds. Use #exit_code or 0 as program exit code</p>
-<pre><code>.server shutdown \#delay [\#exit_code]
+<pre><code>.server shutdown #delay [#exit_code]
 </code></pre>
 <hr />
 <h2 id="server-corpses">server corpses</h2>
@@ -11030,7 +11030,7 @@
 </ul>
 </div>
 <p>Set a skill of id #skill with a current skill value of #level and a maximum value of #max (or equal current maximum if not provide) for the selected character. If no character is selected,you learn the skill</p>
-<pre><code>.setskill \#skill \#level [\#max]
+<pre><code>.setskill #skill #level [#max]
 </code></pre>
 <hr />
 <h2 id="showarea">showarea</h2>
@@ -11040,7 +11040,7 @@
 </ul>
 </div>
 <p>Reveal the area of #areaid to the selected character. If no character is selected,reveal this area to you</p>
-<pre><code>.showarea \#areaid
+<pre><code>.showarea #areaid
 </code></pre>
 <hr />
 <h2 id="stable">stable</h2>
@@ -11090,7 +11090,7 @@
 </ul>
 </div>
 <p>Remove aura due to spell #spellid from the selected Unit</p>
-<pre><code>.unaura \#spellid
+<pre><code>.unaura #spellid
 </code></pre>
 <hr />
 <h2 id="server-motd">server motd</h2>
@@ -11130,7 +11130,7 @@
 </ul>
 </div>
 <p>Unban accounts for IP pattern</p>
-<pre><code>null
+<pre><code>.unban ip $Ip
 </code></pre>
 <hr />
 <h2 id="unlearn">unlearn</h2>
@@ -11140,7 +11140,7 @@
 </ul>
 </div>
 <p>Unlearn for selected player a spell #spell.  If all provided then all ranks unlearned</p>
-<pre><code>.unlearn \#spell [all]
+<pre><code>.unlearn #spell [all]
 </code></pre>
 <hr />
 <h2 id="wchange">wchange</h2>
@@ -11150,7 +11150,7 @@
 </ul>
 </div>
 <p>Set current weather to #weathertype with an intensity of #status.#weathertype can be 1 for rain,2 for snow,and 3 for sand. #status can be 0 for disabled,and 1 for enabled</p>
-<pre><code>.wchange \#weathertype \#status
+<pre><code>.wchange #weathertype #status
 </code></pre>
 <hr />
 <h2 id="wp-export">wp export</h2>
@@ -11160,7 +11160,7 @@
 </ul>
 </div>
 <p>Exports the creature waypoints to a file</p>
-<pre><code>.wp export [\#creature_guid or Select a Creature] $filenam
+<pre><code>.wp export [#creature_guid or Select a Creature] $filenam
 </code></pre>
 <hr />
 <h2 id="account-create">account create</h2>
@@ -11220,7 +11220,7 @@
 </ul>
 </div>
 <p>Teleport player to a given location</p>
-<pre><code>.tele \#location
+<pre><code>.tele #location
 </code></pre>
 <hr />
 <h2 id="account-set-gmlevel">account set gmlevel</h2>
@@ -11230,7 +11230,7 @@
 </ul>
 </div>
 <p>Set the access level for a given account ID,username or the account of a targeted character. #level may range from 0 to 3</p>
-<pre><code>.account set gmlevel [\#accountId|$accountName] \#level
+<pre><code>.account set gmlevel [#accountId|$accountName] #level
 </code></pre>
 <hr />
 <h2 id="account-set-password">account set password</h2>
@@ -11240,7 +11240,7 @@
 </ul>
 </div>
 <p>Change the accounts password for an account ID or username to $password</p>
-<pre><code>.account set password (\#accountId|$accountName) $password $password
+<pre><code>.account set password (#accountId|$accountName) $password $password
 </code></pre>
 <hr />
 <h2 id="tele-group">tele group</h2>
@@ -11250,7 +11250,7 @@
 </ul>
 </div>
 <p>Teleport a selected player and his group members to a given location</p>
-<pre><code>.tele group\#location
+<pre><code>.tele group#location
 </code></pre>
 <hr />
 <h2 id="tele-name">tele name</h2>
@@ -11260,7 +11260,7 @@
 </ul>
 </div>
 <p>Teleport the given character to a given location. Character can be offline</p>
-<pre><code>.tele name [\#playername] \#location
+<pre><code>.tele name [#playername] #location
 </code></pre>
 <hr />
 <h2 id="ticket">ticket</h2>
@@ -11270,7 +11270,7 @@
 </ul>
 </div>
 <p>on/off for GMs to show or not a new ticket directly,$character_name to show ticket of this character,#num to show ticket #num</p>
-<pre><code>.ticket on         .ticket off         .ticket \#num         .ticket $character_name         .ticket respond \#num $response         .ticket respond $character_name $response
+<pre><code>.ticket on         .ticket off         .ticket #num         .ticket $character_name         .ticket respond #num $response         .ticket respond $character_name $response
 </code></pre>
 <hr />
 <h2 id="trigger">trigger</h2>
@@ -11280,7 +11280,7 @@
 </ul>
 </div>
 <p>Show detail infor about areatrigger with id #trigger_id or trigger id associated with shift-link. If areatrigger id or shift-link not provided then selected nearest areatrigger at current map</p>
-<pre><code>.trigger [\#trigger_id|$trigger_shift-link|$trigger_target_shift-link]
+<pre><code>.trigger [#trigger_id|$trigger_shift-link|$trigger_target_shift-link]
 </code></pre>
 <hr />
 <h2 id="trigger-active">trigger active</h2>
@@ -11300,7 +11300,7 @@
 </ul>
 </div>
 <p>Output areatriggers at distance #distance from player. If #distance not provided use 10 as default value</p>
-<pre><code>.trigger near [\#distance]
+<pre><code>.trigger near [#distance]
 </code></pre>
 <hr />
 <h2 id="character-deleted-delete">character deleted delete</h2>
@@ -11310,7 +11310,7 @@
 </ul>
 </div>
 <p>Completely deletes the selected characters. If $name is supplied,only characters with that string in their name will be deleted,if #guid is supplied,only the character with that GUID will be deleted</p>
-<pre><code>.character deleted delete \#guid|$name
+<pre><code>.character deleted delete #guid|$name
 </code></pre>
 <hr />
 <h2 id="character-deleted-old">character deleted old</h2>
@@ -11320,7 +11320,7 @@
 </ul>
 </div>
 <p>Completely deletes all characters with deleted time longer #keepDays. If #keepDays not provided the  used value from mangosd.conf option CharDelete.KeepDays. If referenced config option disabled (use 0 value) then command cant be used without #keepDays</p>
-<pre><code>.character deleted old [\#keepDays]
+<pre><code>.character deleted old [#keepDays]
 </code></pre>
 <hr />
 <h2 id="character-erase">character erase</h2>
@@ -11410,7 +11410,7 @@
 </ul>
 </div>
 <p>Show or set server log level (0 - errors only,1 - basic,2 - detail,3 - debug)</p>
-<pre><code>.server log level [\#level]
+<pre><code>.server log level [#level]
 </code></pre>
 <hr />
 <h2 id="wp-modify">wp modify</h2>
