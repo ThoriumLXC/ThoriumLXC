@@ -656,7 +656,7 @@
       <a href="../../configuration/realmd/" class="md-nav__link">
         
   
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M144 144v48h160v-48c0-44.2-35.8-80-80-80s-80 35.8-80 80m-64 48v-48C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64v192c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M96 128a128 128 0 1 1 256 0 128 128 0 1 1-256 0M0 482.3C0 383.8 79.8 304 178.3 304h91.4c98.5 0 178.3 79.8 178.3 178.3 0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3M504 312v-64h-64c-13.3 0-24-10.7-24-24s10.7-24 24-24h64v-64c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24h-64v64c0 13.3-10.7 24-24 24s-24-10.7-24-24"/></svg>
   
   <span class="md-ellipsis">
     realmd.conf
@@ -739,7 +739,7 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1.25c2.487 0 4.773.402 6.466 1.079.844.337 1.577.758 2.112 1.264.536.507.922 1.151.922 1.907v12.987l-.026.013h.026c0 .756-.386 1.4-.922 1.907-.535.506-1.268.927-2.112 1.264-1.693.677-3.979 1.079-6.466 1.079s-4.774-.402-6.466-1.079c-.844-.337-1.577-.758-2.112-1.264C2.886 19.9 2.5 19.256 2.5 18.5h.026l-.026-.013V5.5c0-.756.386-1.4.922-1.907.535-.506 1.268-.927 2.112-1.264C7.226 1.652 9.513 1.25 12 1.25M4 14.371v4.116l-.013.013H4c0 .211.103.487.453.817.351.332.898.666 1.638.962 1.475.589 3.564.971 5.909.971s4.434-.381 5.909-.971c.739-.296 1.288-.63 1.638-.962.349-.33.453-.607.453-.817h.013L20 18.487v-4.116a8 8 0 0 1-1.534.8c-1.693.677-3.979 1.079-6.466 1.079s-4.774-.402-6.466-1.079a8 8 0 0 1-1.534-.8M20 12V7.871a8 8 0 0 1-1.534.8C16.773 9.348 14.487 9.75 12 9.75s-4.774-.402-6.466-1.079A8 8 0 0 1 4 7.871V12c0 .21.104.487.453.817.35.332.899.666 1.638.961 1.475.59 3.564.972 5.909.972s4.434-.382 5.909-.972c.74-.295 1.287-.629 1.638-.96.35-.33.453-.607.453-.818M4 5.5c0 .211.103.487.453.817.351.332.898.666 1.638.962 1.475.589 3.564.971 5.909.971s4.434-.381 5.909-.971c.739-.296 1.288-.63 1.638-.962.349-.33.453-.607.453-.817 0-.211-.103-.487-.453-.817-.351-.332-.898-.666-1.638-.962-1.475-.589-3.564-.971-5.909-.971s-4.434.381-5.909.971c-.739.296-1.288.63-1.638.962C4.104 5.013 4 5.29 4 5.5"/></svg>
   
   <span class="md-ellipsis">
-    mariadb
+    MariaDB
   </span>
   
 
@@ -3164,40 +3164,39 @@
 
 
 <h1 id="overview">Overview</h1>
-<p>I started ThoriumLXC after spending some time experimenting with emulator game servers. Switching between server versions or variants but resuming progress from a backup often failed. There were several containerized solutions available for these emulator services, but each approached things differently, and I felt like I was starting from scratch each time.</p>
-<p>That's when I started working on ThoriumLXC, hoping to create a plug-and-play solution for easily spinning up different servers. The idea was simple: stop a server at any time (&amp; backup the game data) and start it back up later without any hassle.</p>
-<p>For running these environments, I decided to use Docker and Docker Compose since they make starting and stopping services so much easier. For building the container images, I went with Bazel because I wanted to see if I could make the build process more predictable. In simple terms, every build would always produce exactly the same result, no matter where or when it runs. It also gave me a chance to experiment with <code>rules_oci</code>, a new way in Bazel of building container images.</p>
+<p>I started ThoriumLXC after spending some time experimenting with emulator game servers. I frequently encountered issues when switching between server versions or variants, as resuming progress from a backup often failed. Although several containerized solutions were available for these emulator services, each approached the problem differently, and I felt like I was starting from scratch every time.</p>
+<p>That's when I began developing ThoriumLXC, aiming to create a plug-and-play solution for easily spinning up different servers. The idea was simple: stop a server at any time (and back up the game data) and restart it later without any hassle.</p>
+<p>To run these environments, I decided to use Docker and Docker Compose because they simplify starting and stopping services. For building the container images, I chose Bazel in an effort to make the build process more predictable. In simple terms, every build would produce exactly the same result, regardless of where or when it was executed. This approach also gave me the opportunity to experiment with <code>rules_oci</code>, a new Bazel method for building container images.</p>
 <h2 id="docker">Docker</h2>
-<p>Docker is a tool that bundles an application (like a game server emulator) with everything it needs—code, libraries, system tools, and more—into a portable "container".</p>
+<p>Docker is a tool that bundles an application (like a game server emulator) with everything it needs—code, libraries, system tools, and more—into a portable container.</p>
 <p>Think of it like a lunchbox: once everything is inside, it's the same no matter where you open it.</p>
-<p>I've used containers while working within Cloud environments, and for services I self-host on my own home servers. I find it makes things easier, especially when it comes to things like backups, moving between hardware, or stop/start projects.</p>
+<p>I've used containers while working within cloud environments and for services I self-host on my own home servers. I find they make things easier, especially when it comes to tasks such as backups, migrating between hardware, or stopping and starting projects.</p>
 <p>Why Docker for ThoriumLXC?</p>
 <ul>
-<li>No installs: No need to manually install runtime libraries or handle multiple programs.</li>
-<li>Simple updates: If a new version is released, you just download the updated container.</li>
-<li>Quick resets: If something goes wrong, remove the container and start fresh.</li>
-<li>Portable: Moving to different hardware is easy—just restore the game data from a backup</li>
-<li>Rollbacks: If something is off in a new version, just use an older version tag.</li>
+<li>No installs: There is no need to manually install runtime libraries or handle multiple programs.</li>
+<li>Simple updates: If a new version is released, you simply download the updated container.</li>
+<li>Quick resets: If something goes wrong, you remove the container and start fresh.</li>
+<li>Portable: Moving to different hardware is easy—just restore the game data from a backup.</li>
+<li>Rollbacks: If something is off in a new version, you can use an older version tag.</li>
 </ul>
 <h2 id="docker-compose">Docker Compose</h2>
-<p>When your setup needs multiple containers, <em>like an emulator server plus a database</em>, Docker Compose launches them all together with a single command and manages them as a group. It acts as a coordinator, so you don't have to start each piece one by one. This handles thing like dependencies, where a server relies on a database being up to start correctly.</p>
+<p>When your setup requires multiple containers, such as an emulator server plus a database, Docker Compose launches them all together with a single command and manages them as a group. It acts as a coordinator, so you don't have to start each component individually. This also takes care of dependencies, ensuring that a server waits for its associated database to be up before starting correctly.</p>
 <p>Why Docker Compose for ThoriumLXC?</p>
 <ul>
 <li>Easier management: Launch or shut down every container at once.</li>
 <li>Portable configuration: Create a repository with a configuration that can be booted up quickly.</li>
-<li>Clear organization: You define everything in a single file, making it simple to see how the pieces connect.</li>
-<li>Administration: You can easily bring along backups, supporting services, and configuration files.</li>
+<li>Clear organization: Define everything in a single file, making it simple to see how the pieces connect.</li>
+<li>Administration: Easily include backups, supporting services, and configuration files.</li>
 </ul>
 <h2 id="bazel">Bazel</h2>
-<p>Bazel is a "build system"—it packages your code and files into the final container images, consistently producing the same results every time. This means that for a given version of the emulator code, the build will produce an identical container image every time.</p>
-<p>I chose Bazel because I was already familiar with it, and wanted to take the opportunity to work with the new <code>rules_oci</code> ruleset, which makes it easier to build container images within Bazel. The <code>rules_oci</code> offer a different experience than working with Dockerfiles, and has notable quirks when it comes to ad-hoc scripts. This resulted in a different <a href="../../build/overview/">build experience</a> that worked out, but probably isn't the best practice.</p>
-<p>One of Bazel's big advantages is its support for hermetic builds. This means that identical source files would produce identical containers.</p>
+<p>Bazel is a build system that I use to package the emulator code and files into container images. In practice, this means that for any given version of the emulator code, the build produces an identical container image.</p>
+<p>I chose Bazel because I was already familiar with it and wanted to take the opportunity to work with the new <code>rules_oci</code> ruleset, which simplifies building container images within Bazel. The <code>rules_oci</code> ruleset offers a different experience compared to using Dockerfiles and has notable quirks when it comes to ad-hoc scripts. This resulted in a <a href="../../build/overview/">build that worked out, though it probably isn’t the best practice</a>.</p>
 <p>Why Bazel for ThoriumLXC?</p>
 <ul>
-<li>Predictable builds: Every container image is built in a repeatable way, reducing surprises.</li>
-<li>Variant Management: Managing different versions or optional builds is easy.</li>
-<li>Smooth experimentation: Building and testing new versions is easier when the process is the same every time.</li>
-<li>Hermetic Outputs: If the container image is the same as the source, then it's easier to confirm no tampering.</li>
+<li>Predictable Builds: Every container image is built in a repeatable way, reducing surprises.</li>
+<li>Variant Management: Managing different versions or optional builds is straightforward.</li>
+<li>Smooth Experimentation: Building and testing new versions is easier when the process remains consistent.</li>
+<li>Hermetic Outputs: Because each container image is derived solely from its source, it's easier to verify that no tampering has occurred.</li>
 </ul>
 <hr />
 <p>In short, I mostly just wanted to tinker with Bazel and figured it would be pretty straightforward.</p>

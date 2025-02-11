@@ -656,7 +656,7 @@
       <a href="../../configuration/realmd/" class="md-nav__link">
         
   
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M144 144v48h160v-48c0-44.2-35.8-80-80-80s-80 35.8-80 80m-64 48v-48C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64v192c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M96 128a128 128 0 1 1 256 0 128 128 0 1 1-256 0M0 482.3C0 383.8 79.8 304 178.3 304h91.4c98.5 0 178.3 79.8 178.3 178.3 0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3M504 312v-64h-64c-13.3 0-24-10.7-24-24s10.7-24 24-24h64v-64c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24h-64v64c0 13.3-10.7 24-24 24s-24-10.7-24-24"/></svg>
   
   <span class="md-ellipsis">
     realmd.conf
@@ -739,7 +739,7 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1.25c2.487 0 4.773.402 6.466 1.079.844.337 1.577.758 2.112 1.264.536.507.922 1.151.922 1.907v12.987l-.026.013h.026c0 .756-.386 1.4-.922 1.907-.535.506-1.268.927-2.112 1.264-1.693.677-3.979 1.079-6.466 1.079s-4.774-.402-6.466-1.079c-.844-.337-1.577-.758-2.112-1.264C2.886 19.9 2.5 19.256 2.5 18.5h.026l-.026-.013V5.5c0-.756.386-1.4.922-1.907.535-.506 1.268-.927 2.112-1.264C7.226 1.652 9.513 1.25 12 1.25M4 14.371v4.116l-.013.013H4c0 .211.103.487.453.817.351.332.898.666 1.638.962 1.475.589 3.564.971 5.909.971s4.434-.381 5.909-.971c.739-.296 1.288-.63 1.638-.962.349-.33.453-.607.453-.817h.013L20 18.487v-4.116a8 8 0 0 1-1.534.8c-1.693.677-3.979 1.079-6.466 1.079s-4.774-.402-6.466-1.079a8 8 0 0 1-1.534-.8M20 12V7.871a8 8 0 0 1-1.534.8C16.773 9.348 14.487 9.75 12 9.75s-4.774-.402-6.466-1.079A8 8 0 0 1 4 7.871V12c0 .21.104.487.453.817.35.332.899.666 1.638.961 1.475.59 3.564.972 5.909.972s4.434-.382 5.909-.972c.74-.295 1.287-.629 1.638-.96.35-.33.453-.607.453-.818M4 5.5c0 .211.103.487.453.817.351.332.898.666 1.638.962 1.475.589 3.564.971 5.909.971s4.434-.381 5.909-.971c.739-.296 1.288-.63 1.638-.962.349-.33.453-.607.453-.817 0-.211-.103-.487-.453-.817-.351-.332-.898-.666-1.638-.962-1.475-.589-3.564-.971-5.909-.971s-4.434.381-5.909.971c-.739.296-1.288.63-1.638.962C4.104 5.013 4 5.29 4 5.5"/></svg>
   
   <span class="md-ellipsis">
-    mariadb
+    MariaDB
   </span>
   
 
@@ -3196,7 +3196,7 @@
 
 
 <h1 id="builder-image">Builder Image</h1>
-<p>The Builder Image is responsible for compiling the emulator server. It includes in the source code and scripts for running the entire build process, from source code to final binary artifacts. If you have the builder image, you are capable of building your own variants of the source.</p>
+<p>The Builder Image is responsible for compiling the emulator server. It includes the source code and scripts required to run the entire build process—from compiling the source code to producing the final binary artifacts. With the Builder Image, you can build your own variants from the source.</p>
 <div class="admonition info">
 <p class="admonition-title">What is: Compilation (Compiling)</p>
 <p>Imagine you wrote a recipe for a cake in a language only bakers understand, but your robot chef can't read it. Compilation is like translating your recipe into simple step-by-step instructions that the robot can follow and make the exact cake.</p>
@@ -3222,43 +3222,59 @@
 <li>Supports Customization: You can set environment variables or pass additional arguments when running the image with <code>docker run</code> to adjust the build process as needed.</li>
 </ul>
 <h2 id="running-the-builder-image">Running the Builder Image</h2>
-<p>Each image comes with its own instructions for building the emulator server with the Builder Image, but the general process can be understood like so.</p>
-<p>In a terminal, run a command:</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>cmangos-build<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;cmangos&quot;</span>:/opt/cmangos<span class="w"> </span>thoriumlxc/cmangos-builder:latest
+<p>ThoriumLXC offers container images for various emulator server projects, each accompanied by its own set of instructions for leveraging the build process. All of these images follow the same general pattern, which can be summarized as a <code>docker run</code> command.</p>
+<p>This looks like the following:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>thoriumlxc-build<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;outputs&quot;</span>:/opt/outputs<span class="w"> </span>thoriumlxc/placeholder-image-name
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If the builder image isn't already downloaded, this command will download it, which can take a while given your internet speeds.</p>
+<p>This is a mock-example of a <code>docker run</code> command that will not work. Refer to the emulator server projects "Building ..." pages for runnable steps.</p>
 </div>
+<p>This command can be explained as:</p>
 <ul>
-<li><code>docker run</code> is telling Docker to run the application contained within the image.</li>
-<li><code>thoriumlxc/cmangos-builder:latest</code> refers to the the Builder Image, which in this case is whatever is the most recently released version.</li>
-<li><code>--name cmangos-build</code> is telling Docker what you name this container you are spinning up.</li>
-<li><code>-v "cmangos":/opt/cmangos</code> makes available the folder <code>cmangos</code> on your machine, to the Docker environment. The build will write all of the server binaries to that <code>cmangos</code> folder on your side. <code>/opt/cmangos</code> is the folder that the build process sees.</li>
+<li><code>docker run</code> - Starts a new container (an isolated environment) from an image.</li>
+<li><code>--name thoriumlxc-build</code> - Gives the container the name "thoriumlxc-build" for easier reference.</li>
+<li><code>-v "outputs":/opt/outputs</code> - Links a local folder called "outputs" to the container’s /opt/outputs folder so you can share files between your computer and the container.</li>
+<li><code>thoriumlxc/placeholder-image-name</code> - Specifies which Docker image to use as the blueprint for the container’s software and settings. <strong>This is a mock image</strong>.</li>
 </ul>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Depending on your computer, this may take a while.</p>
-</div>
-<p>After the build completes, the compiled artifacts are placed in an output directory inside the container, called <code>/opt/cmangos</code>. Since this directory was mounted, the files will already be written down in the folder <code>cmangos</code>.</p>
-<pre><code>// TODO: Fix this with actual outputs from the build
-.
-├── compose.yaml
-├── mangosd.conf
-├── README.md
-└── realmd.conf
-</code></pre>
+<p>When the build process completes, the compiled artifacts are placed in an output directory inside the container called <code>/opt/outputs</code>. Since this directory is set up to share files between your computer and the container, the files automatically appear in the <code>outputs</code> folder, looking something like this:</p>
+<div class="highlight"><pre><span></span><code>.
+├── bin
+│   ├── mangosd
+│   ├── realmd
+│   ├── run-mangosd
+│   ├── run-realmd
+│   ├── tools
+│   │   ├── ad
+│   │   ├── ExtractResources.sh
+│   │   ├── MoveMapGen
+│   │   ├── MoveMapGen.sh
+│   │   ├── offmesh.txt
+│   │   ├── vmap_assembler
+│   │   └── vmap_extractor
+│   └── warden_modules
+├── etc
+│   ├── ahbot.conf
+│   ├── aiplayerbot.conf
+│   ├── anticheat.conf
+│   ├── anticheat.conf.dist
+│   ├── mangosd.conf
+│   ├── mangosd.conf.dist
+│   ├── realmd.conf
+│   └── realmd.conf.dist
+└── run
+</code></pre></div>
 <h3 id="hermetic-builds-explained">Hermetic Builds Explained</h3>
-<p>The Builder Image has mechanisms in place to attempt to produce hermetic builds. But what does "hermetic" mean in this context?</p>
-<p>This means that slight modifications have been made to the build processes of the upstream emulator server projects, as well as attempts to control external factors that could influence the build.</p>
+<p>The Builder Image includes mechanisms to <em>attempt</em> to produce hermetic builds. But what does "hermetic" mean in this context?</p>
+<p>It means that slight modifications have been made to the build processes of the upstream emulator server projects, and measures have been taken to control external factors that could influence the build.</p>
 <p>In simple terms:</p>
 <ul>
-<li>The timestamp for the build artifacts is set to a fixed date</li>
-<li>The operating system, libraries, tools and system packages are fixed versions</li>
-<li>The emulator server project source code is a fixed version</li>
-<li>The emulator server build process has been modified to rely on fixed versions</li>
+<li>The timestamp for the build artifacts is set to a fixed date.</li>
+<li>The operating system, libraries, tools, and system packages are fixed versions.</li>
+<li>The emulator server project source code is fixed to a specific version.</li>
+<li>The emulator server build process has been modified to rely on fixed versions.</li>
 </ul>
-<p>This <em>should</em> ensure that multiple runs of the Builder Image, with the exact same arguments, will yield bit-wise identical binaries.</p>
+<p>These measures should ensure that multiple runs of the Builder Image, with the exact same arguments, yield bit-wise identical binaries.</p>
 <h2 id="summary">Summary</h2>
 <ul>
 <li>The Builder Image handles the full build process for the emulator server.</li>
