@@ -3214,10 +3214,10 @@
 </div>
 <p>Depending on the capabilities of your system, this can take a while to download the images, and run the build processes. The outputs from the build will be written to the directory <code>/opt/mangos</code> within the container image.</p>
 <details class="example">
-<summary>A working build example</summary>
+<summary>The build progress</summary>
 <p><img alt="build of cmangos-classic" src="../../../assets/images/demo/building.gif" /></p>
 </details>
-<p>To extract these build emulation binaries, we'll need to copy the files from the <code>cmangos-classic-build</code> container. In a terminal, run the following command to copy the files to a folder named <code>cmangos-classic</code>:</p>
+<p>When this has finished, you will need to extract the build emulation binaries from the completed container. We'll do this by copying the files from the <code>cmangos-classic-build</code> container. In a terminal, run the following command to copy the files from the folder <code>/opt/mangos</code> in the container, to a folder named <code>cmangos-classic</code> on your machine:</p>
 <pre><code>docker cp cmangos-classic-build:/opt/mangos cmangos-classic
 </code></pre>
 <p>This will look like the following:</p>
