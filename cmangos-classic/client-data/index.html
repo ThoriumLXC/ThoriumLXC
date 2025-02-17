@@ -3231,13 +3231,14 @@
 
 
 <h1 id="client-data">Client Data</h1>
-<h2 id="extracting-client-data">Extracting Client Data</h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If you are looking for an overview, navigate to the <a href="../../thoriumlxc/client-data/">overview page</a></p>
+<p>If you are looking to understand what Client Data is, navigate to the <a href="../../thoriumlxc/client-data/">overview page.</a></p>
 </div>
-<p>Client data is extracted from the game client and provided to the emulator server. To extract this data, you can use the extractor tool container image, which analyzes the game client to generate the necessary data files for the emulator. Assuming you are in the folder containing the game client, open a terminal and run the following command:</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span>.:/client<span class="w"> </span>-v<span class="w"> </span>./client-data:/output<span class="w"> </span>ghcr.io/thoriumlxc/cmangos-classic-extractor:latest
+<h2 id="extracting-client-data">Extracting Client Data</h2>
+<p>Client data is extracted from the game client and provided to the emulator server. To extract this data, you can use the extractor tools included in the container image, which analyzes the game client to generate the necessary data files for the emulator. Assuming you are in the folder containing the game client, open a terminal and run the following command:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># TODO: Fix this</span>
+docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span>.:/client<span class="w"> </span>-v<span class="w"> </span>./client-data:/output<span class="w"> </span>ghcr.io/thoriumlxc/cmangos-classic:2025.02.17
 </code></pre></div>
 <p>This command can be explained as:</p>
 <ul>
@@ -3245,7 +3246,7 @@
 <li><code>--rm</code> - Automatically deletes the container after it finishes running.</li>
 <li><code>-v .:/client</code> - Shares the current folder (on your computer) with the container at the <code>/client</code> location. This is the folder containing the game client.</li>
 <li><code>-v ./client-data:/output</code> - Shares the client-data folder (on your computer) with the container at the <code>/output</code> location. The extracted client data will be written here.</li>
-<li><code>ghcr.io/thoriumlxc/cmangos-classic-extractor:latest</code> - Specifies the container image to use, which contains the software for extracting client data.</li>
+<li><code>ghcr.io/thoriumlxc/cmangos-classic:2025.02.17</code> - Specifies the container image to use, which contains the software for extracting client data.</li>
 </ul>
 <h2 id="client-data-in-docker">Client Data in Docker</h2>
 <p>Client data can be stored in named volumes to simplify management. Named volumes act like shared folders you can reference by name, making it easy to extract data once without worrying about specific file paths when mounting the data for the servers. This is especially useful when frequently restarting or recreating the server.</p>
@@ -3253,10 +3254,7 @@
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>create<span class="w"> </span>volume<span class="w"> </span>cmangos-classic-map-data
 </code></pre></div>
 <p>The extracted game client data can now be loaded into the named volume by running the following command:</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-v<span class="w"> </span>cmangos-classic-map-data:/data<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-v<span class="w"> </span>./client-data:/input<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>alpine<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;cp -a /input/. /data&quot;</span>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span>cmangos-classic-map-data:/data<span class="w"> </span>-v<span class="w"> </span>./client-data:/input<span class="w"> </span>alpine<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;cp -a /input/. /data&quot;</span>
 </code></pre></div>
 <p>This command can be explained as:</p>
 <ul>
@@ -3302,7 +3300,7 @@
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span>./client-data:/output<span class="w"> </span>cmangos-classic-extracted-client-data
 </code></pre></div>
 </details>
-<p>ThoriumLXC does not make available these pre-extracted client data containers. You may persist your own extracted client data by creating one of these images, but that is outside the scope of this guide.</p>
+<p>You may persist your own extracted client data by creating one of these images, but that is outside the scope of this guide.</p>
 <p>Should you do so, you will be able to create &amp; populate the named volume using the following commands:</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>load<span class="w"> </span>&lt;<span class="w"> </span>cmangos-classic-map-data.tar.gz
 docker<span class="w"> </span>create<span class="w"> </span>volume<span class="w"> </span>cmangos-classic-map-data
