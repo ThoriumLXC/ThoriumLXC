@@ -3234,7 +3234,7 @@
 <h2 id="what-is-realmdconf">What is <code>realmd.conf</code></h2>
 <p>The <code>realmd.conf</code> file is the primary configuration file for the authentication server in the emulator server. It handles user logins and connections, specifying settings such as database connections, IP bindings, and security options.</p>
 <h3 id="example-configuration">Example Configuration</h3>
-<p>The <code>realmd.conf</code> is made available in the predefined git repositories, setting alongside a docker compose <code>compose.yaml</code>. These are "mounted" into the containers, making the configuration files available to the server.</p>
+<p>The <code>realmd.conf</code> is made available in the predefined git repositories, set alongside a docker compose <code>compose.yaml</code>. These are "mounted" into the containers, making the configuration files available to the server.</p>
 <p>Below is a basic example of how the mounting of the <code>realmd.conf</code> file into a Docker Compose container works:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">mangos</span><span class="p">:</span>
@@ -3243,7 +3243,7 @@
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./realmd.conf:/opt/mangos/realmd.conf</span>
 <span class="w">    </span><span class="c1"># Additional environment variables or configurations can go here</span>
 </code></pre></div>
-<p>This works by working relative to the path of the <code>compose.yaml</code> file. So if you file is located at <code>/some/path/to/file/compose.yaml</code>, then your file would be next it within the same directory at <code>/some/path/to/file/realmd.conf</code></p>
+<p>This works by being relative to the path of the <code>compose.yaml</code> file. So, if your file is located at <code>/some/path/to/file/compose.yaml</code>, then your file would be next to it within the same directory at <code>/some/path/to/file/realmd.conf</code>.</p>
 <div class="highlight"><pre><span></span><code>.
 ├── compose.yaml
 ├── mangosd.conf
@@ -3252,37 +3252,33 @@
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">For Windows</p>
-<p>On Windows, these paths will be in the form of <code>C:\some\path\to\file\</code>, as Windows uses <code>\</code> and MacOS/Linux use <code>\</code> for indicating paths. Most likely your path is somewhere in your home directory like <code>C:\Users\LocalUser\ThoriumLXC</code>.</p>
+<p>On Windows, these paths will be in the form of <code>C:\some\path\to\file\</code>, as Windows uses <code>\</code> and MacOS/Linux use <code>/</code> for indicating paths. Most likely your path is somewhere in your home directory like <code>C:\Users\LocalUser\ThoriumLXC</code>.</p>
 </div>
 <h2 id="configuration-options">Configuration Options</h2>
-<p>Here are a few commonly used settings from the <code>realmd.conf</code> file, as examples of what is within this file. You should look at <a href="../../../thoriumlxc/overview/#container-images">each individual project</a> for the specific project options.</p>
+<p>Here are a few notable settings from the <code>realmd.conf</code> file.</p>
 <table>
 <thead>
 <tr>
-<th><strong>Config Key</strong></th>
+<th><strong>Configuration Key</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>LoginDatabaseInfo</code></td>
-<td>Sets the database connection details for the authentication server.</td>
+<td>Sets the database connection details for the authentication server. <br /><br />This uses the alias <code>database</code> for the IP of Database container.</td>
 </tr>
 <tr>
-<td><code>ListenHost</code></td>
+<td><code>BindIP</code></td>
 <td>Defines the IP address the server listens on.</td>
 </tr>
 <tr>
-<td><code>ListenPort</code></td>
+<td><code>RealmServerPort</code></td>
 <td>Specifies the port for incoming connections.</td>
 </tr>
 <tr>
 <td><code>MaxPingTime</code></td>
 <td>Determines the maximum time to wait for client responses.</td>
-</tr>
-<tr>
-<td><code>LogLevel</code></td>
-<td>Controls the verbosity of logs for troubleshooting purposes.</td>
 </tr>
 </tbody>
 </table>

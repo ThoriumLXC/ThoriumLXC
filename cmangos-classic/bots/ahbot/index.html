@@ -3213,12 +3213,11 @@
 
 
 <h1 id="ah-bots">AH Bots</h1>
-<p>The AHBot (Auction House Bot) in CMaNGOS is a built-in feature designed to simulate player-driven activity in the in-game Auction House. On single-player servers or servers with low populations, the Auction House can appear empty or stagnant, which detracts from the normal gameplay experience.</p>
+<p>The <a href="https://github.com/cmangos/playerbots">AHBot</a> (Auction House Bot) in CMaNGOS is a built-in feature designed to simulate player-driven activity in the in-game Auction House. On single-player servers or servers with low populations, the Auction House can appear empty or stagnant, which detracts from the normal gameplay experience.</p>
 <p>AHBot helps address this by automatically posting auctions for a variety of items—ranging from common consumables and crafting materials to high-level gear—ensuring that players have a selection of goods to buy and sell. It can also purchase items listed by real players, injecting gold back into the economy and mimicking organic market demand.</p>
 <p>The behaviour of the bot can be configured within the <code>ahbot.conf</code> file, which will align the bot to the server's needs.</p>
-<p>For example, you can set the minimum and maximum quantity of items listed, define price ranges or bidding increments, and even designate which item categories are more frequently posted. You might tweak the bot to create a bustling market with plentiful resources for solo leveling characters, or limit the number of high-tier gear pieces to preserve a sense of rarity.</p>
 <h2 id="configuration-options">Configuration Options</h2>
-<p>Below is a table of the most common (and essential) AHBot-related configuration options found in this file. Note that some options appear multiple times for different item categories or rarities; each category can be customized independently using the same parameter names but with category and rarity suffixes (e.g., <code>AhBot.MaxAuctionCount.equip.blue</code>).</p>
+<p>Below is a table of the most common (and essential) AHBot-related configuration options. Note that some options appear multiple times for different item categories or rarities; each category can be customized independently using the same parameter names but with category and rarity suffixes (e.g., <code>AhBot.MaxAuctionCount.equip.blue</code>).</p>
 <table>
 <thead>
 <tr>

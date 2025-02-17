@@ -6,7 +6,7 @@ commands:
   - command: account characters
     level: 3
     syntax: '.account characters [#accountId|$accountName]'
-    description: 'DisDisplays a list of all characters for the specified account by #accountId, $accountName, or for the account of the selected player.'
+    description: 'Displays a list of all characters for the specified account by #accountId, $accountName, or for the account of the selected player.'
   - command: account set addon
     level: 3
     syntax: '.account set addon [#accountId|$accountName] #addon'

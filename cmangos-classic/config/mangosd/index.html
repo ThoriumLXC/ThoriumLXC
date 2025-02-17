@@ -3233,9 +3233,9 @@
 <h1 id="mangosd-configuration-guide">MangosD Configuration Guide</h1>
 <h2 id="what-is-mangosdconf">What is <code>mangosd.conf</code>?</h2>
 <p>The <code>mangosd.conf</code> file is the main configuration file for a Massive Network Game Object Servers (MaNGOS) server. It contains settings that control how the server operates, including server name, rates, logging, and more.</p>
-<p>Think of it as the "control center" for your emulator server: if you need to tweak gameplay rates or game data, you’ll find the relevant settings here.</p>
+<p>Think of it as the control center for your emulator server: if you need to tweak gameplay rates or game data, you’ll find the relevant settings here.</p>
 <h3 id="example-configuration">Example Configuration</h3>
-<p>The <code>mangosd.conf</code> is made available in the predefined git repositories, setting alongside a docker compose <code>compose.yaml</code>. These are "mounted" into the containers, making the configuration files available to the server.</p>
+<p>The <code>mangosd.conf</code> is made available in the predefined git repositories, set alongside a docker compose <code>compose.yaml</code>. These are "mounted" into the containers, making the configuration files available to the server.</p>
 <p>Below is a basic example of how the mounting of the <code>mangosd.conf</code> file into a Docker Compose container works:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">mangos</span><span class="p">:</span>
@@ -3244,7 +3244,7 @@
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./mangosd.conf:/opt/mangos/mangosd.conf</span>
 <span class="w">    </span><span class="c1"># Additional environment variables or configurations can go here</span>
 </code></pre></div>
-<p>This works by working relative to the path of the <code>compose.yaml</code> file. So if you file is located at <code>/some/path/to/file/compose.yaml</code>, then your file would be next it within the same directory at <code>/some/path/to/file/mangosd.conf</code></p>
+<p>This works by being relative to the path of the <code>compose.yaml</code> file. So, if your file is located at <code>/some/path/to/file/compose.yaml</code>, then your file would be next to it within the same directory at <code>/some/path/to/file/mangosd.conf</code>.</p>
 <div class="highlight"><pre><span></span><code>.
 ├── compose.yaml
 ├── mangosd.conf
@@ -3253,37 +3253,405 @@
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">For Windows</p>
-<p>On Windows, these paths will be in the form of <code>C:\some\path\to\file\</code>, as Windows uses <code>\</code> and MacOS/Linux use <code>\</code> for indicating paths. Most likely your path is somewhere in your home directory like <code>C:\Users\LocalUser\ThoriumLXC</code>.</p>
+<p>On Windows, these paths will be in the form of <code>C:\some\path\to\file\</code>, as Windows uses <code>\</code> and MacOS/Linux use <code>/</code> for indicating paths. Most likely your path is somewhere in your home directory like <code>C:\Users\LocalUser\ThoriumLXC</code>.</p>
 </div>
 <h2 id="configuration-options">Configuration Options</h2>
-<p>Here are a few commonly used settings from the <code>mangosd.conf</code> file, as examples of what is within this file. You should look at <a href="../../../thoriumlxc/overview/#container-images">each individual project</a> for the specific project options.</p>
+<p>Here are the settings from the <code>mangosd.conf</code> file.</p>
 <table>
 <thead>
 <tr>
-<th><strong>Config Key</strong></th>
+<th><strong>Configuration Key</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>RealmID</code></td>
-<td>A unique numeric identifier for your realm. If you have multiple realms, each needs a different ID.</td>
+<td>RealmID must match the realmlist inside the realmd database.</td>
 </tr>
 <tr>
 <td><code>DataDir</code></td>
-<td>The file system path where your game data is stored. Example: <code>/usr/local/cmangos/data/</code></td>
+<td>Data directory setting. Important: DataDir needs to be quoted, as it is a string which may contain space characters. Example: "/opt/mangos/share/mangos".</td>
+</tr>
+<tr>
+<td><code>LogsDir</code></td>
+<td>Logs directory setting. Logs dir must exists, or all logs need to be disabled. Default: "" - no log directory prefix.</td>
+</tr>
+<tr>
+<td><code>LoginDatabaseInfo</code></td>
+<td>Database connection settings for the world server. See details for MySQL and PostgreSQL formats.</td>
 </tr>
 <tr>
 <td><code>WorldDatabaseInfo</code></td>
-<td>The connection details for your World database. Includes host, port, username, password, and database name. Example: <code>127.0.0.1;3306;root;password;cmangos_world</code></td>
+<td>Database connection settings for the world server.</td>
 </tr>
 <tr>
-<td><code>Rates.Health</code></td>
-<td>Adjusts how quickly players regenerate health. A higher value means faster regeneration.</td>
+<td><code>CharacterDatabaseInfo</code></td>
+<td>Database connection settings for the world server.</td>
 </tr>
 <tr>
-<td><code>Rates.DropMoney</code></td>
-<td>Controls how much gold creatures drop. A lower value decreases dropped gold; a higher value increases it.</td>
+<td><code>LogsDatabaseInfo</code></td>
+<td>Database connection settings for the world server.</td>
+</tr>
+<tr>
+<td><code>LoginDatabaseConnections</code></td>
+<td>Amount of connections to database used for SELECT queries. Maximum 16 connections per database. Default: 1 connection for SELECT statements.</td>
+</tr>
+<tr>
+<td><code>WorldDatabaseConnections</code></td>
+<td>Amount of connections to database used for SELECT queries. Maximum 16 connections per database. Default: 1 connection for SELECT statements.</td>
+</tr>
+<tr>
+<td><code>CharacterDatabaseConnections</code></td>
+<td>Amount of connections to database used for SELECT queries. Maximum 16 connections per database. Default: 1 connection for SELECT statements.</td>
+</tr>
+<tr>
+<td><code>LogsDatabaseConnections</code></td>
+<td>Amount of connections to database used for SELECT queries. Maximum 16 connections per database. Default: 1 connection for SELECT statements.</td>
+</tr>
+<tr>
+<td><code>MaxPingTime</code></td>
+<td>Settings for maximum database-ping interval (minutes between pings).</td>
+</tr>
+<tr>
+<td><code>WorldServerPort</code></td>
+<td>Port on which the server will listen.</td>
+</tr>
+<tr>
+<td><code>BindIP</code></td>
+<td>Bind World Server to specific IP address. Useful for running multiple worldd/realmd instances.</td>
+</tr>
+<tr>
+<td><code>SD2ErrorLogFile</code></td>
+<td>Log File for SD2-Errors.</td>
+</tr>
+<tr>
+<td><code>UseProcessors</code></td>
+<td>Used processors mask for multi-processors system (Used only at Windows). Default: 0 (selected by OS).</td>
+</tr>
+<tr>
+<td><code>ProcessPriority</code></td>
+<td>Process priority setting (Used only at Windows). Default: 1 (HIGH).</td>
+</tr>
+<tr>
+<td><code>Compression</code></td>
+<td>Compression level for update packages sent to client (1..9). Default: 1 (speed).</td>
+</tr>
+<tr>
+<td><code>PlayerLimit</code></td>
+<td>Maximum number of players in the world. Excluding Mods, GM's, and Admins. Default: 100.</td>
+</tr>
+<tr>
+<td><code>SaveRespawnTimeImmediately</code></td>
+<td>Save respawn time for creatures at death and for gameobjects at use/open. Default: 1.</td>
+</tr>
+<tr>
+<td><code>MaxOverspeedPings</code></td>
+<td>Maximum overspeed ping count before player kick. Default: 2.</td>
+</tr>
+<tr>
+<td><code>GridUnload</code></td>
+<td>Unload grids. Default: 1 (unload grids).</td>
+</tr>
+<tr>
+<td><code>LoadAllGridsOnMaps</code></td>
+<td>Load grids of maps at server startup. Default: "" (don't load all grids at startup).</td>
+</tr>
+<tr>
+<td><code>Autoload.Active</code></td>
+<td>Load active creatures. Default: True.</td>
+</tr>
+<tr>
+<td><code>GridCleanUpDelay</code></td>
+<td>Grid clean up delay in milliseconds. Default: 300000 (5 min).</td>
+</tr>
+<tr>
+<td><code>MapUpdateInterval</code></td>
+<td>Map update interval in milliseconds. Default: 100.</td>
+</tr>
+<tr>
+<td><code>ChangeWeatherInterval</code></td>
+<td>Weather update interval in milliseconds. Default: 600000 (10 min).</td>
+</tr>
+<tr>
+<td><code>PlayerSave.Interval</code></td>
+<td>Player save interval in milliseconds. Default: 900000 (15 min).</td>
+</tr>
+<tr>
+<td><code>PlayerSave.Stats.MinLevel</code></td>
+<td>Minimum level for saving character stats for external usage in database. Default: 0.</td>
+</tr>
+<tr>
+<td><code>PlayerSave.Stats.SaveOnlyOnLogout</code></td>
+<td>Enable/Disable saving of character stats only on logout. Default: 1.</td>
+</tr>
+<tr>
+<td><code>vmap.enableLOS</code></td>
+<td>Enable/Disable VMaps support for line of sight calculation. Default: 1 (enable).</td>
+</tr>
+<tr>
+<td><code>vmap.enableHeight</code></td>
+<td>Enable/Disable VMaps support for height calculation. Default: 1 (enable).</td>
+</tr>
+<tr>
+<td><code>vmap.enableIndoorCheck</code></td>
+<td>Enable/Disable VMap based indoor check to remove outdoor-only auras. Default: 1 (Enabled).</td>
+</tr>
+<tr>
+<td><code>DetectPosCollision</code></td>
+<td>Check for visible collision with other objects. Default: 1 (enable).</td>
+</tr>
+<tr>
+<td><code>mmap.enabled</code></td>
+<td>Enable/Disable pathfinding using mmaps. Default: 1 (enable).</td>
+</tr>
+<tr>
+<td><code>mmap.ignoreMapIds</code></td>
+<td>Disable mmap pathfinding on the listed maps.</td>
+</tr>
+<tr>
+<td><code>mmap.preload</code></td>
+<td>Enable/Disable preloading on first mapId load. Default: 0 (disable).</td>
+</tr>
+<tr>
+<td><code>PathFinder.OptimizePath</code></td>
+<td>Use or not path finder path optimization. Default: 1 (enable).</td>
+</tr>
+<tr>
+<td><code>PathFinder.NormalizeZ</code></td>
+<td>Correct calculated path points Z. Default: 0 (disable).</td>
+</tr>
+<tr>
+<td><code>UpdateUptimeInterval</code></td>
+<td>Update realm uptime period in minutes. Default: 10 (minutes).</td>
+</tr>
+<tr>
+<td><code>MapUpdate.Threads</code></td>
+<td>Number of threads to use for maps update. Default: 3.</td>
+</tr>
+<tr>
+<td><code>MaxCoreStuckTime</code></td>
+<td>Periodically check if the process is stuck. Default: 0 (Disabled).</td>
+</tr>
+<tr>
+<td><code>AddonChannel</code></td>
+<td>Permit/disable the use of the addon channel through the server. Default: 1 (permit addon channel).</td>
+</tr>
+<tr>
+<td><code>CleanCharacterDB</code></td>
+<td>Perform character db cleanups on startup. Default: 1 (Enable).</td>
+</tr>
+<tr>
+<td><code>LogSQL</code></td>
+<td>Enable logging of GM commands. Default: 1 (Write SQL code to logfile).</td>
+</tr>
+<tr>
+<td><code>PidFile</code></td>
+<td>World daemon PID file. Default: "" (do not create PID file).</td>
+</tr>
+<tr>
+<td><code>LogLevel</code></td>
+<td>Server console level of logging. Default: 3 (Full/Debug).</td>
+</tr>
+<tr>
+<td><code>LogTime</code></td>
+<td>Include time in server console output. Default: 0 (no time).</td>
+</tr>
+<tr>
+<td><code>LogFile</code></td>
+<td>Logfile name. Default: "Server.log".</td>
+</tr>
+<tr>
+<td><code>PacketLogFile</code></td>
+<td>Binary packet logging file for the world server. Default: "" (Disabled).</td>
+</tr>
+<tr>
+<td><code>LogTimestamp</code></td>
+<td>Logfile with timestamp of server start in name. Default: 0 (no timestamp in name).</td>
+</tr>
+<tr>
+<td><code>LogFileLevel</code></td>
+<td>Server file level of logging. Default: 0 (Minimum).</td>
+</tr>
+<tr>
+<td><code>WorldLogFile</code></td>
+<td>Packet logging file for the worldserver. Default: "" (no log file created).</td>
+</tr>
+<tr>
+<td><code>DBErrorLogFile</code></td>
+<td>Log file of DB errors detected at server run. Default: "DBErrors.log".</td>
+</tr>
+<tr>
+<td><code>EventAIErrorLogFile</code></td>
+<td>Log file of EventAI errors detected at server run. Default: "EventAIErrors.log".</td>
+</tr>
+<tr>
+<td><code>CharLogFile</code></td>
+<td>Character operations logfile name. Default: "Char.log".</td>
+</tr>
+<tr>
+<td><code>GmLogFile</code></td>
+<td>GM Log file of GM commands. Default: "" (Disable).</td>
+</tr>
+<tr>
+<td><code>GmLogTimestamp</code></td>
+<td>GM Logfile with timestamp of server start in name. Default: 0 (no timestamp in name).</td>
+</tr>
+<tr>
+<td><code>GmLogPerAccount</code></td>
+<td>GM Logfiles with GM account id. Default: 0 (add GM log data to single log file).</td>
+</tr>
+<tr>
+<td><code>RaLogFile</code></td>
+<td>Log file of RA commands. Default: "Ra.log".</td>
+</tr>
+<tr>
+<td><code>LogColors</code></td>
+<td>Color for messages. Default: "" (none colors).</td>
+</tr>
+<tr>
+<td><code>GameType</code></td>
+<td>Server realm style. Default: 1 (PVP).</td>
+</tr>
+<tr>
+<td><code>RealmZone</code></td>
+<td>Server realm zone. Default: 1 (Development).</td>
+</tr>
+<tr>
+<td><code>DBC.Locale</code></td>
+<td>DBC Language Settings. Default: 255 (Auto Detect).</td>
+</tr>
+<tr>
+<td><code>StrictPlayerNames</code></td>
+<td>Limit player name to language specific symbols set. Default: 0 (disable).</td>
+</tr>
+<tr>
+<td><code>MinPlayerName</code></td>
+<td>Minimal name length. Default: 2.</td>
+</tr>
+<tr>
+<td><code>CharactersCreatingDisabled</code></td>
+<td>Disable characters creating. Default: 0 (enabled).</td>
+</tr>
+<tr>
+<td><code>MaxPlayerLevel</code></td>
+<td>Max level that can be reached by a player for experience. Default: 60.</td>
+</tr>
+<tr>
+<td><code>StartPlayerLevel</code></td>
+<td>Starting level of character. Default: 1.</td>
+</tr>
+<tr>
+<td><code>StartPlayerMoney</code></td>
+<td>Starting money for new players. Default: 0.</td>
+</tr>
+<tr>
+<td><code>MaxHonorPoints</code></td>
+<td>Max honor points a player can have. Default: 75000.</td>
+</tr>
+<tr>
+<td><code>StartHonorPoints</code></td>
+<td>Starting honor points for new players. Default: 0.</td>
+</tr>
+<tr>
+<td><code>MaintenanceDay</code></td>
+<td>The day of the week for server maintenance. Default: 3 (Wednesday).</td>
+</tr>
+<tr>
+<td><code>InstantLogout</code></td>
+<td>Enable or disable instant logout for security level. Default: 1 (Mods/GMs/Admins).</td>
+</tr>
+<tr>
+<td><code>DisableWaterBreath</code></td>
+<td>Enable or disable waterbreathing. Default: 4.</td>
+</tr>
+<tr>
+<td><code>AlwaysShowQuestGreeting</code></td>
+<td>Controls whether quest greetings are always shown. Default: 0 (disabled).</td>
+</tr>
+<tr>
+<td><code>TaxiFlightChatFix</code></td>
+<td>Workaround for client bug on taxi flight. Default: 0 (disabled).</td>
+</tr>
+<tr>
+<td><code>MaxSpellCastsInChain</code></td>
+<td>Max number of triggered spell casts in chain. Default: 20.</td>
+</tr>
+<tr>
+<td><code>RabbitDay</code></td>
+<td>Set to Rabbit Day (date in unix time). Default: 0 (off).</td>
+</tr>
+<tr>
+<td><code>Instance.IgnoreLevel</code></td>
+<td>Ignore level requirement to enter instance. Default: 0 (false).</td>
+</tr>
+<tr>
+<td><code>Instance.IgnoreRaid</code></td>
+<td>Ignore raid requirement to enter instance. Default: 0 (false).</td>
+</tr>
+<tr>
+<td><code>Instance.ResetTimeHour</code></td>
+<td>The hour of the day for global instance resets. Default: 4.</td>
+</tr>
+<tr>
+<td><code>Instance.UnloadDelay</code></td>
+<td>Unload instance map from memory after a set time. Default: 1800000 (30 minutes).</td>
+</tr>
+<tr>
+<td><code>Instance.DisableRelocate</code></td>
+<td>Disables player relocation after 15 minutes or instance reset. Default: 0 (false).</td>
+</tr>
+<tr>
+<td><code>Quests.LowLevelHideDiff</code></td>
+<td>Quest level difference to hide low level quests. Default: 5.</td>
+</tr>
+<tr>
+<td><code>Quests.HighLevelHideDiff</code></td>
+<td>Quest level difference to hide high level quests. Default: 7.</td>
+</tr>
+<tr>
+<td><code>Group.OfflineLeaderDelay</code></td>
+<td>Grace period for offline group leader to reconnect. Default: 300 (5 minutes).</td>
+</tr>
+<tr>
+<td><code>Guild.EventLogRecordsCount</code></td>
+<td>Count of guild event log records stored. Default: 100.</td>
+</tr>
+<tr>
+<td><code>MaxPrimaryTradeSkill</code></td>
+<td>Max number of primary trade skills a player can learn. Default: 2.</td>
+</tr>
+<tr>
+<td><code>MailDeliveryDelay</code></td>
+<td>Mail delivery delay for item sending. Default: 3600 sec (1 hour).</td>
+</tr>
+<tr>
+<td><code>PetUnsummonAtMount</code></td>
+<td>Permanent pet will unsummon at player mount. Default: 0 (not unsummon).</td>
+</tr>
+<tr>
+<td><code>AutoDownrank</code></td>
+<td>Automatically select correct rank when buffing/healing lower level players. Default: 0 (false).</td>
+</tr>
+<tr>
+<td><code>BeepAtStart</code></td>
+<td>Beep at mangosd start finished. Default: 1 (true).</td>
+</tr>
+<tr>
+<td><code>ShowProgressBars</code></td>
+<td>Show progress bars for load steps at server startup. Default: 0 (false).</td>
+</tr>
+<tr>
+<td><code>WaitAtStartupError</code></td>
+<td>Wait after startup error report. Default: 0 (not wait).</td>
+</tr>
+<tr>
+<td><code>Motd</code></td>
+<td>Message of the Day displayed at world login.</td>
+</tr>
+<tr>
+<td><code>PlayerCommands</code></td>
+<td>Should player chat be parsed for GM commands. Default: 1 (parse commands).</td>
 </tr>
 </tbody>
 </table>
