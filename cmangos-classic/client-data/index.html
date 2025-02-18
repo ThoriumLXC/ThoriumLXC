@@ -3385,8 +3385,7 @@
 </div>
 <h2 id="extracting-client-data">Extracting Client Data</h2>
 <p>Client data is extracted from the game client and provided to the emulator server. To extract this data, you can use the extractor tools included in the container image, which analyzes the game client to generate the necessary data files for the emulator. Assuming you are in the folder containing the game client, open a terminal and run the following command:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># TODO: Fix this</span>
-docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span>.:/client<span class="w"> </span>-v<span class="w"> </span>./client-data:/output<span class="w"> </span>ghcr.io/thoriumlxc/cmangos-classic:2025.02.17
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span>--workdir<span class="w"> </span><span class="s2">&quot;/opt/mangos/bin/tools&quot;</span><span class="w"> </span>-v<span class="w"> </span>.:/opt/mangos/bin/tools/client<span class="w"> </span>-v<span class="w"> </span>./client-data:/opt/mangos/bin/tools/output<span class="w"> </span>docker.io/thoriumlxc/cmangos-classic:2025.02.17<span class="w"> </span>bash<span class="w"> </span>ExtractResources.sh<span class="w"> </span>client<span class="w"> </span>output
 </code></pre></div>
 <p>This command can be explained as:</p>
 <ul>
