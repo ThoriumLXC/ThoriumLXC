@@ -3395,6 +3395,42 @@
 <li><code>-v ./client-data:/output</code> - Shares the client-data folder (on your computer) with the container at the <code>/output</code> location. The extracted client data will be written here.</li>
 <li><code>ghcr.io/thoriumlxc/cmangos-classic:2025.02.17</code> - Specifies the container image to use, which contains the software for extracting client data.</li>
 </ul>
+<p>The extract files should look roughly like the following:</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><code>*.m2</code> means that the files in the folder are M2 files. Similar for <code>*.wmo</code>. The below is just to offer a rough idea of what kind of <em>file extensions</em> exist in that extracted folder. The number of files is an approximate.</p>
+</div>
+<div class="highlight"><pre><span></span><code>.
+├── MaNGOSExtractor.log
+├── MaNGOSExtractor_detailed.log
+├── Buildings
+│   ├── *.m2
+│   ├── *.wmo
+│   ├── dir_bin
+│   └── temp_gameobject_models
+├── Cameras
+│   ├── *.m2
+│   └── *.m2
+├── dbc
+│   ├── *.dbc
+│   └── *.dbc
+├── maps
+│   ├── *.map
+│   └── *.map
+├── mmaps
+│   ├── *.mmap
+│   ├── *.mmtile
+│   └── *.mmtile
+└── vmaps
+    ├── *.vmtree
+    ├── *.vmtile
+    ├── *.wmo.vmo
+    ├── *.m2.vmo
+    ├── *.m2
+    └── temp_gameobject_models
+
+6 directories, 14610 files
+</code></pre></div>
 <h2 id="client-data-in-docker">Client Data in Docker</h2>
 <p>Client data can be stored in named volumes to simplify management. Named volumes act like shared folders you can reference by name, making it easy to extract data once without worrying about specific file paths when mounting the data for the servers. This is especially useful when frequently restarting or recreating the server.</p>
 <p>You can create a named volume called <code>cmangos-classic-map-data</code> by running the following command:</p>
