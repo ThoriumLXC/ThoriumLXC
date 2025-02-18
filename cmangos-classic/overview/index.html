@@ -3462,7 +3462,7 @@
 <p>If you prefer to use Git, you can also download the repository using <code>git clone</code> instead of downloading &amp; extracting.</p>
 <h2 id="preparing-the-client-data">Preparing the Client Data</h2>
 <p>Open a terminal within the folder containing the game client, then run the following command to extract the client data into the folder <code>client-data</code>:</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span>--workdir<span class="w"> </span><span class="s2">&quot;/opt/mangos/bin/tools&quot;</span><span class="w"> </span>-v<span class="w"> </span>.:/opt/mangos/bin/tools/client<span class="w"> </span>-v<span class="w"> </span>./client-data:/opt/mangos/bin/tools/output<span class="w"> </span>docker.io/thoriumlxc/cmangos-classic:2025.02.17<span class="w"> </span>bash<span class="w"> </span>ExtractResources.sh<span class="w"> </span>client<span class="w"> </span>output
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--workdir<span class="w"> </span>/opt/mangos/bin/tools<span class="w"> </span>-v<span class="w"> </span>.:/client<span class="w"> </span>-v<span class="w"> </span>./client-data:/output<span class="w"> </span>docker.io/thoriumlxc/cmangos-classic:bots-2025.02.17<span class="w"> </span>bash<span class="w"> </span>ExtractResources.sh<span class="w"> </span>a<span class="w"> </span>/client<span class="w"> </span>/output
 </code></pre></div>
 <details class="example">
 <summary>Extracting the data</summary>
